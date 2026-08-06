@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tox/
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+*.tsbuildinfo
+
+# Env / secrets
+.env
+.env.local
+
+# Data (SQLite) — keep dir, ignore contents
+.data/
+*.db
+*.sqlite3
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
