@@ -1,0 +1,12 @@
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+.env
+.data
+tests
+Dockerfile
+docker-compose.yml  # n/a
+*.md
+.githooks

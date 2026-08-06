@@ -1,0 +1,42 @@
+name: techdebt-radar
+
+services:
+  api:
+    build:
+      context: ./backend
+    container_name: techdebt-api
+    environment:
+      APP_NAME: ${APP_NAME:-TechDebt Radar}
+      DEBUG: ${DEBUG:-false}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/data/radar.db}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173,http://localhost:8080,http://localhost:3000}
+      REQUIRE_SQLITE_READY: ${REQUIRE_SQLITE_READY:-true}
+    volumes:
+      - radar_data:/app/data
+    ports:
+      - "8001:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/health').status==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: techdebt-frontend
+    depends_on:
+      - api
+    ports:
+      - "8088:80"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  radar_data:
