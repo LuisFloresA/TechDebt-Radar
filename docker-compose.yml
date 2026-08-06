@@ -1,6 +1,17 @@
 name: techdebt-radar
 
 services:
+  redis:
+    image: redis:7-alpine
+    container_name: techdebt-redis
+    command: ["redis-server", "--appendonly", "no"]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
   api:
     build:
       context: ./backend
@@ -9,18 +20,45 @@ services:
       APP_NAME: ${APP_NAME:-TechDebt Radar}
       DEBUG: ${DEBUG:-false}
       DATABASE_URL: ${DATABASE_URL:-sqlite:////app/data/radar.db}
-      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173,http://localhost:8080,http://localhost:3000}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      REPO_STORAGE_DIR: ${REPO_STORAGE_DIR:-/app/data/repos}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173,http://localhost:8088,http://localhost:3000}
       REQUIRE_SQLITE_READY: ${REQUIRE_SQLITE_READY:-true}
     volumes:
       - radar_data:/app/data
     ports:
       - "8001:8000"
+    depends_on:
+      redis:
+        condition: service_healthy
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8000/api/health').status==200 else 1)"]
       interval: 30s
       timeout: 5s
       retries: 3
       start_period: 10s
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ./backend
+    container_name: techdebt-worker
+    command: ["celery", "-A", "app.workers.celery_app", "worker", "--loglevel=info"]
+    environment:
+      APP_NAME: ${APP_NAME:-TechDebt Radar}
+      DEBUG: ${DEBUG:-false}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////app/data/radar.db}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      REPO_STORAGE_DIR: ${REPO_STORAGE_DIR:-/app/data/repos}
+    volumes:
+      - radar_data:/app/data
+    healthcheck:
+      disable: true
+    depends_on:
+      redis:
+        condition: service_healthy
+      api:
+        condition: service_started
     restart: unless-stopped
 
   frontend:
