@@ -2,27 +2,25 @@
 
 Analítica de salud técnica de repositorios. Introduces una URL de GitHub y la plataforma analiza el historial de Git y el árbol de código para producir un dashboard con métricas accionables: deuda técnica, hotspots, bus factor, churn y un score de salud global.
 
-**Estado:** F0 — esqueleto self-host (ver README de planificación en `docs/`).
+**Estado:** F1 — Git Analytics MVP (backend). Ver README de planificación en `docs/planificacion/`.
 
 ---
 
-## F0 · Esqueleto self-host
+## F1 · Git Analytics MVP
 
-Esta fase entrega la pila base funcionando con Docker Compose:
+Backend de análisis asíncrono del historial de repositorios GitHub:
 
-- Backend FastAPI con endpoints de salud `/api/health` y `/api/health/ready`.
-- Frontend React 19 + Vite + TypeScript con *health badge* que consulta la API.
-- Pipeline de CI (lint, test, build) en GitHub Actions.
-- Criterio de salida: `docker compose up` levanta la pila y `/api/health` responden `OK`.
+- `POST /api/analyze` crea un *job* y lo envía a Celery vía Redis.
+- El worker clona el repo de forma **segura** (anti-SSRF, shallow `--depth`, límite de tamaño), extrae `git log --numstat` y calcula **hotspots**, **churn**, **bus factor** y **cadencia**.
+- `GET /api/jobs/{id}` devuelve el estado y, si terminó, el reporte con las métricas.
+- Persistencia en SQLite.
 
-### Stack
-
-| Capa      | Tecnología                              |
-|-----------|-----------------------------------------|
-| Backend   | Python 3.14 · FastAPI · pydantic v2      |
-| Frontend  | React 19 · TypeScript 5 · Vite · Chart.js (F1) |
-| Infra     | Docker + Docker Compose · GitHub Actions |
-| Storage   | SQLite (volume)                          |
+```
+Cliente -> API (FastAPI) -> Redis/Celery -> Worker
+   |-> clon seguro (aislado + límites)
+   |-> git log --numstat -> hotspots, churn, bus factor, cadencia
+   |-> guarda Report (SQLite)
+```
 
 ## Quickstart
 
@@ -30,12 +28,21 @@ Esta fase entrega la pila base funcionando con Docker Compose:
 docker compose up --build
 ```
 
-- API:  http://localhost:8001 (`/docs` para OpenAPI)
-- Front: http://localhost:8088
+Servicios: `redis`, `api` (:8001), `worker`, `frontend` (:8088).
 
 ```bash
 curl http://localhost:8001/api/health        # {"status":"ok", ...}
 curl http://localhost:8001/api/health/ready  # 200
+
+# Analizar un repositorio público
+curl -X POST http://localhost:8001/api/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"url":"https://github.com/LuisFloresA/TechDebt-Radar"}'
+# -> 202 {"id":1, "status":"queued", ...}
+
+# Estado / reporte
+curl http://localhost:8001/api/jobs/1
+# -> {"job":{"status":"succeeded",...},"report":{"metrics":{...}}}
 ```
 
 ## Desarrollo local

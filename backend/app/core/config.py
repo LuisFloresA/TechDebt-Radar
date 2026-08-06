@@ -12,9 +12,16 @@ class Settings(BaseSettings):
     debug: bool = False
     database_url: str = "sqlite:///./radar.db"
     allowed_origins: str = (
-        "http://localhost:5173,http://localhost:8080,http://localhost:3000"
+        "http://localhost:5173,http://localhost:8080,http://localhost:8888,"
+        "http://localhost:3000"
     )
     require_sqlite_ready: bool = True
+
+    redis_url: str = "redis://localhost:6379/0"
+    repo_storage_dir: str = "./data/repos"
+    max_repo_size_mb: int = 200
+    clone_depth: int = 1
+    clone_timeout_seconds: int = 120
 
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", case_sensitive=False
