@@ -1,12 +1,31 @@
+import type { Job, ReportResponse } from './types'
+
 export interface Health {
   status: string
   version: string
 }
 
-export async function fetchHealth(signal?: AbortSignal): Promise<Health> {
-  const res = await fetch('/api/health', { signal })
+async function request<T>(path: string, init?: RequestInit): Promise<T> {
+  const res = await fetch(path, init)
   if (!res.ok) {
-    throw new Error(`Health check failed: ${res.status}`)
+    const body = await res.json().catch(() => ({}))
+    throw new Error(body.detail ?? `Request failed: ${res.status}`)
   }
-  return res.json() as Promise<Health>
+  return res.json() as Promise<T>
+}
+
+export function fetchHealth(signal?: AbortSignal): Promise<Health> {
+  return request<Health>('/api/health', { signal })
+}
+
+export function analyzeRepo(url: string): Promise<Job> {
+  return request<Job>('/api/analyze', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ url }),
+  })
+}
+
+export function fetchJob(jobId: number): Promise<ReportResponse> {
+  return request<ReportResponse>(`/api/jobs/${jobId}`)
 }

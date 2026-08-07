@@ -1,0 +1,2500 @@
+﻿{
+    "summary":  {
+                    "total_commits":  50,
+                    "total_authors":  26,
+                    "files_analyzed":  215
+                },
+    "hotspots":  [
+                     {
+                         "path":  "History.md",
+                         "changes":  3927,
+                         "added":  3924,
+                         "deleted":  3,
+                         "commits":  10,
+                         "authors":  9
+                     },
+                     {
+                         "path":  "test/app.router.js",
+                         "changes":  1217,
+                         "added":  1217,
+                         "deleted":  0,
+                         "commits":  1,
+                         "authors":  1
+                     },
+                     {
+                         "path":  "lib/response.js",
+                         "changes":  1092,
+                         "added":  1071,
+                         "deleted":  21,
+                         "commits":  5,
+                         "authors":  5
+                     },
+                     {
+                         "path":  "test/res.sendFile.js",
+                         "changes":  913,
+                         "added":  913,
+                         "deleted":  0,
+                         "commits":  1,
+                         "authors":  1
+                     },
+                     {
+                         "path":  "test/express.urlencoded.js",
+                         "changes":  828,
+                         "added":  828,
+                         "deleted":  0,
+                         "commits":  1,
+                         "authors":  1
+                     },
+                     {
+                         "path":  "test/express.static.js",
+                         "changes":  815,
+                         "added":  815,
+                         "deleted":  0,
+                         "commits":  1,
+                         "authors":  1
+                     },
+                     {
+                         "path":  "test/express.json.js",
+                         "changes":  755,
+                         "added":  755,
+                         "deleted":  0,
+                         "commits":  1,
+                         "authors":  1
+                     },
+                     {
+                         "path":  "test/Router.js",
+                         "changes":  636,
+                         "added":  636,
+                         "deleted":  0,
+                         "commits":  1,
+                         "authors":  1
+                     },
+                     {
+                         "path":  "lib/application.js",
+                         "changes":  635,
+                         "added":  633,
+                         "deleted":  2,
+                         "commits":  3,
+                         "authors":  3
+                     },
+                     {
+                         "path":  "test/res.send.js",
+                         "changes":  620,
+                         "added":  620,
+                         "deleted":  0,
+                         "commits":  3,
+                         "authors":  3
+                     },
+                     {
+                         "path":  "test/express.text.js",
+                         "changes":  566,
+                         "added":  566,
+                         "deleted":  0,
+                         "commits":  1,
+                         "authors":  1
+                     },
+                     {
+                         "path":  "lib/request.js",
+                         "changes":  549,
+                         "added":  538,
+                         "deleted":  11,
+                         "commits":  4,
+                         "authors":  4
+                     }
+                 ],
+    "churn":  [
+                  {
+                      "path":  "History.md",
+                      "added":  3924,
+                      "deleted":  3,
+                      "churn":  3927
+                  },
+                  {
+                      "path":  "test/app.router.js",
+                      "added":  1217,
+                      "deleted":  0,
+                      "churn":  1217
+                  },
+                  {
+                      "path":  "lib/response.js",
+                      "added":  1071,
+                      "deleted":  21,
+                      "churn":  1092
+                  },
+                  {
+                      "path":  "test/res.sendFile.js",
+                      "added":  913,
+                      "deleted":  0,
+                      "churn":  913
+                  },
+                  {
+                      "path":  "test/express.urlencoded.js",
+                      "added":  828,
+                      "deleted":  0,
+                      "churn":  828
+                  },
+                  {
+                      "path":  "test/express.static.js",
+                      "added":  815,
+                      "deleted":  0,
+                      "churn":  815
+                  },
+                  {
+                      "path":  "test/express.json.js",
+                      "added":  755,
+                      "deleted":  0,
+                      "churn":  755
+                  },
+                  {
+                      "path":  "test/Router.js",
+                      "added":  636,
+                      "deleted":  0,
+                      "churn":  636
+                  },
+                  {
+                      "path":  "lib/application.js",
+                      "added":  633,
+                      "deleted":  2,
+                      "churn":  635
+                  },
+                  {
+                      "path":  "test/res.send.js",
+                      "added":  620,
+                      "deleted":  0,
+                      "churn":  620
+                  },
+                  {
+                      "path":  "test/express.text.js",
+                      "added":  566,
+                      "deleted":  0,
+                      "churn":  566
+                  },
+                  {
+                      "path":  "lib/request.js",
+                      "added":  538,
+                      "deleted":  11,
+                      "churn":  549
+                  },
+                  {
+                      "path":  "test/app.use.js",
+                      "added":  542,
+                      "deleted":  0,
+                      "churn":  542
+                  },
+                  {
+                      "path":  "test/res.download.js",
+                      "added":  501,
+                      "deleted":  14,
+                      "churn":  515
+                  },
+                  {
+                      "path":  "test/express.raw.js",
+                      "added":  513,
+                      "deleted":  0,
+                      "churn":  513
+                  },
+                  {
+                      "path":  "test/app.render.js",
+                      "added":  392,
+                      "deleted":  0,
+                      "churn":  392
+                  },
+                  {
+                      "path":  "test/res.render.js",
+                      "added":  367,
+                      "deleted":  0,
+                      "churn":  367
+                  },
+                  {
+                      "path":  "test/res.jsonp.js",
+                      "added":  344,
+                      "deleted":  14,
+                      "churn":  358
+                  },
+                  {
+                      "path":  "test/res.location.js",
+                      "added":  317,
+                      "deleted":  13,
+                      "churn":  330
+                  },
+                  {
+                      "path":  "test/app.param.js",
+                      "added":  323,
+                      "deleted":  0,
+                      "churn":  323
+                  },
+                  {
+                      "path":  "Readme.md",
+                      "added":  290,
+                      "deleted":  8,
+                      "churn":  298
+                  },
+                  {
+                      "path":  "test/res.cookie.js",
+                      "added":  295,
+                      "deleted":  0,
+                      "churn":  295
+                  },
+                  {
+                      "path":  "test/Route.js",
+                      "added":  274,
+                      "deleted":  0,
+                      "churn":  274
+                  },
+                  {
+                      "path":  "lib/utils.js",
+                      "added":  271,
+                      "deleted":  0,
+                      "churn":  271
+                  },
+                  {
+                      "path":  "test/res.format.js",
+                      "added":  248,
+                      "deleted":  0,
+                      "churn":  248
+                  },
+                  {
+                      "path":  "test/res.redirect.js",
+                      "added":  218,
+                      "deleted":  4,
+                      "churn":  222
+                  },
+                  {
+                      "path":  "test/config.js",
+                      "added":  207,
+                      "deleted":  0,
+                      "churn":  207
+                  },
+                  {
+                      "path":  "test/res.status.js",
+                      "added":  206,
+                      "deleted":  0,
+                      "churn":  206
+                  },
+                  {
+                      "path":  "lib/view.js",
+                      "added":  205,
+                      "deleted":  0,
+                      "churn":  205
+                  },
+                  {
+                      "path":  "test/app.route.js",
+                      "added":  197,
+                      "deleted":  0,
+                      "churn":  197
+                  },
+                  {
+                      "path":  "test/req.hostname.js",
+                      "added":  188,
+                      "deleted":  0,
+                      "churn":  188
+                  },
+                  {
+                      "path":  "test/res.json.js",
+                      "added":  186,
+                      "deleted":  0,
+                      "churn":  186
+                  },
+                  {
+                      "path":  "test/req.subdomains.js",
+                      "added":  173,
+                      "deleted":  0,
+                      "churn":  173
+                  },
+                  {
+                      "path":  "test/req.is.js",
+                      "added":  169,
+                      "deleted":  0,
+                      "churn":  169
+                  },
+                  {
+                      "path":  ".github/workflows/ci.yml",
+                      "added":  140,
+                      "deleted":  23,
+                      "churn":  163
+                  },
+                  {
+                      "path":  "test/req.host.js",
+                      "added":  156,
+                      "deleted":  0,
+                      "churn":  156
+                  },
+                  {
+                      "path":  "examples/view-locals/index.js",
+                      "added":  155,
+                      "deleted":  0,
+                      "churn":  155
+                  },
+                  {
+                      "path":  "test/app.request.js",
+                      "added":  143,
+                      "deleted":  0,
+                      "churn":  143
+                  },
+                  {
+                      "path":  "test/app.response.js",
+                      "added":  143,
+                      "deleted":  0,
+                      "churn":  143
+                  },
+                  {
+                      "path":  "examples/auth/index.js",
+                      "added":  135,
+                      "deleted":  1,
+                      "churn":  136
+                  },
+                  {
+                      "path":  "test/acceptance/mvc.js",
+                      "added":  132,
+                      "deleted":  0,
+                      "churn":  132
+                  },
+                  {
+                      "path":  ".github/workflows/legacy.yml",
+                      "added":  116,
+                      "deleted":  15,
+                      "churn":  131
+                  },
+                  {
+                      "path":  "test/req.accepts.js",
+                      "added":  125,
+                      "deleted":  0,
+                      "churn":  125
+                  },
+                  {
+                      "path":  "test/res.set.js",
+                      "added":  124,
+                      "deleted":  0,
+                      "churn":  124
+                  },
+                  {
+                      "path":  "test/res.attachment.js",
+                      "added":  120,
+                      "deleted":  1,
+                      "churn":  121
+                  },
+                  {
+                      "path":  "examples/search/index.js",
+                      "added":  102,
+                      "deleted":  19,
+                      "churn":  121
+                  },
+                  {
+                      "path":  "test/app.js",
+                      "added":  120,
+                      "deleted":  0,
+                      "churn":  120
+                  },
+                  {
+                      "path":  "package.json",
+                      "added":  108,
+                      "deleted":  9,
+                      "churn":  117
+                  },
+                  {
+                      "path":  "test/utils.js",
+                      "added":  116,
+                      "deleted":  1,
+                      "churn":  117
+                  },
+                  {
+                      "path":  "examples/web-service/index.js",
+                      "added":  117,
+                      "deleted":  0,
+                      "churn":  117
+                  },
+                  {
+                      "path":  "test/acceptance/auth.js",
+                      "added":  117,
+                      "deleted":  0,
+                      "churn":  117
+                  },
+                  {
+                      "path":  "test/app.options.js",
+                      "added":  116,
+                      "deleted":  0,
+                      "churn":  116
+                  },
+                  {
+                      "path":  "test/res.append.js",
+                      "added":  116,
+                      "deleted":  0,
+                      "churn":  116
+                  },
+                  {
+                      "path":  "test/res.type.js",
+                      "added":  115,
+                      "deleted":  0,
+                      "churn":  115
+                  },
+                  {
+                      "path":  "test/req.ip.js",
+                      "added":  113,
+                      "deleted":  0,
+                      "churn":  113
+                  },
+                  {
+                      "path":  "test/req.protocol.js",
+                      "added":  113,
+                      "deleted":  0,
+                      "churn":  113
+                  },
+                  {
+                      "path":  "test/req.fresh.js",
+                      "added":  108,
+                      "deleted":  0,
+                      "churn":  108
+                  },
+                  {
+                      "path":  "test/req.query.js",
+                      "added":  106,
+                      "deleted":  0,
+                      "churn":  106
+                  },
+                  {
+                      "path":  "test/acceptance/web-service.js",
+                      "added":  105,
+                      "deleted":  0,
+                      "churn":  105
+                  },
+                  {
+                      "path":  ".github/workflows/codeql.yml",
+                      "added":  89,
+                      "deleted":  15,
+                      "churn":  104
+                  },
+                  {
+                      "path":  "test/req.range.js",
+                      "added":  104,
+                      "deleted":  0,
+                      "churn":  104
+                  },
+                  {
+                      "path":  "examples/error-pages/index.js",
+                      "added":  103,
+                      "deleted":  0,
+                      "churn":  103
+                  },
+                  {
+                      "path":  "test/req.secure.js",
+                      "added":  101,
+                      "deleted":  0,
+                      "churn":  101
+                  },
+                  {
+                      "path":  "test/acceptance/error-pages.js",
+                      "added":  99,
+                      "deleted":  0,
+                      "churn":  99
+                  },
+                  {
+                      "path":  "test/acceptance/route-separation.js",
+                      "added":  97,
+                      "deleted":  0,
+                      "churn":  97
+                  },
+                  {
+                      "path":  ".github/workflows/scorecard.yml",
+                      "added":  84,
+                      "deleted":  12,
+                      "churn":  96
+                  },
+                  {
+                      "path":  "examples/mvc/index.js",
+                      "added":  95,
+                      "deleted":  0,
+                      "churn":  95
+                  },
+                  {
+                      "path":  "examples/resource/index.js",
+                      "added":  95,
+                      "deleted":  0,
+                      "churn":  95
+                  },
+                  {
+                      "path":  "examples/route-middleware/index.js",
+                      "added":  91,
+                      "deleted":  1,
+                      "churn":  92
+                  },
+                  {
+                      "path":  "test/res.vary.js",
+                      "added":  90,
+                      "deleted":  0,
+                      "churn":  90
+                  },
+                  {
+                      "path":  "test/req.baseUrl.js",
+                      "added":  88,
+                      "deleted":  0,
+                      "churn":  88
+                  },
+                  {
+                      "path":  "test/support/utils.js",
+                      "added":  86,
+                      "deleted":  0,
+                      "churn":  86
+                  },
+                  {
+                      "path":  "examples/mvc/lib/boot.js",
+                      "added":  83,
+                      "deleted":  0,
+                      "churn":  83
+                  },
+                  {
+                      "path":  "test/app.engine.js",
+                      "added":  83,
+                      "deleted":  0,
+                      "churn":  83
+                  },
+                  {
+                      "path":  "test/exports.js",
+                      "added":  82,
+                      "deleted":  0,
+                      "churn":  82
+                  },
+                  {
+                      "path":  "lib/express.js",
+                      "added":  81,
+                      "deleted":  0,
+                      "churn":  81
+                  },
+                  {
+                      "path":  "examples/route-map/index.js",
+                      "added":  75,
+                      "deleted":  0,
+                      "churn":  75
+                  },
+                  {
+                      "path":  "examples/params/index.js",
+                      "added":  74,
+                      "deleted":  0,
+                      "churn":  74
+                  },
+                  {
+                      "path":  "test/acceptance/cookies.js",
+                      "added":  71,
+                      "deleted":  0,
+                      "churn":  71
+                  },
+                  {
+                      "path":  "test/req.ips.js",
+                      "added":  71,
+                      "deleted":  0,
+                      "churn":  71
+                  },
+                  {
+                      "path":  "benchmarks/README.md",
+                      "added":  34,
+                      "deleted":  34,
+                      "churn":  68
+                  },
+                  {
+                      "path":  "test/acceptance/resource.js",
+                      "added":  68,
+                      "deleted":  0,
+                      "churn":  68
+                  },
+                  {
+                      "path":  "test/app.head.js",
+                      "added":  66,
+                      "deleted":  0,
+                      "churn":  66
+                  },
+                  {
+                      "path":  "test/res.links.js",
+                      "added":  65,
+                      "deleted":  0,
+                      "churn":  65
+                  },
+                  {
+                      "path":  "test/req.acceptsCharsets.js",
+                      "added":  63,
+                      "deleted":  0,
+                      "churn":  63
+                  },
+                  {
+                      "path":  "test/app.routes.error.js",
+                      "added":  62,
+                      "deleted":  0,
+                      "churn":  62
+                  },
+                  {
+                      "path":  "test/res.clearCookie.js",
+                      "added":  62,
+                      "deleted":  0,
+                      "churn":  62
+                  },
+                  {
+                      "path":  "examples/online/index.js",
+                      "added":  61,
+                      "deleted":  0,
+                      "churn":  61
+                  },
+                  {
+                      "path":  "test/req.get.js",
+                      "added":  60,
+                      "deleted":  0,
+                      "churn":  60
+                  },
+                  {
+                      "path":  "examples/ejs/index.js",
+                      "added":  58,
+                      "deleted":  1,
+                      "churn":  59
+                  },
+                  {
+                      "path":  "test/req.acceptsLanguages.js",
+                      "added":  57,
+                      "deleted":  0,
+                      "churn":  57
+                  },
+                  {
+                      "path":  "examples/route-separation/index.js",
+                      "added":  55,
+                      "deleted":  0,
+                      "churn":  55
+                  },
+                  {
+                      "path":  "test/app.listen.js",
+                      "added":  55,
+                      "deleted":  0,
+                      "churn":  55
+                  },
+                  {
+                      "path":  "examples/cookies/index.js",
+                      "added":  53,
+                      "deleted":  0,
+                      "churn":  53
+                  },
+                  {
+                      "path":  "examples/error/index.js",
+                      "added":  53,
+                      "deleted":  0,
+                      "churn":  53
+                  },
+                  {
+                      "path":  "examples/vhost/index.js",
+                      "added":  53,
+                      "deleted":  0,
+                      "churn":  53
+                  },
+                  {
+                      "path":  "examples/view-constructor/github-view.js",
+                      "added":  53,
+                      "deleted":  0,
+                      "churn":  53
+                  },
+                  {
+                      "path":  "test/acceptance/downloads.js",
+                      "added":  49,
+                      "deleted":  2,
+                      "churn":  51
+                  },
+                  {
+                      "path":  "test/req.stale.js",
+                      "added":  50,
+                      "deleted":  0,
+                      "churn":  50
+                  },
+                  {
+                      "path":  "test/acceptance/content-negotiation.js",
+                      "added":  49,
+                      "deleted":  0,
+                      "churn":  49
+                  },
+                  {
+                      "path":  "examples/view-constructor/index.js",
+                      "added":  48,
+                      "deleted":  0,
+                      "churn":  48
+                  },
+                  {
+                      "path":  "examples/route-separation/user.js",
+                      "added":  47,
+                      "deleted":  0,
+                      "churn":  47
+                  },
+                  {
+                      "path":  "examples/content-negotiation/index.js",
+                      "added":  46,
+                      "deleted":  0,
+                      "churn":  46
+                  },
+                  {
+                      "path":  "test/acceptance/vhost.js",
+                      "added":  46,
+                      "deleted":  0,
+                      "churn":  46
+                  },
+                  {
+                      "path":  "test/acceptance/route-map.js",
+                      "added":  45,
+                      "deleted":  0,
+                      "churn":  45
+                  },
+                  {
+                      "path":  "examples/markdown/index.js",
+                      "added":  44,
+                      "deleted":  0,
+                      "churn":  44
+                  },
+                  {
+                      "path":  "test/acceptance/multi-router.js",
+                      "added":  44,
+                      "deleted":  0,
+                      "churn":  44
+                  },
+                  {
+                      "path":  "test/acceptance/params.js",
+                      "added":  44,
+                      "deleted":  0,
+                      "churn":  44
+                  },
+                  {
+                      "path":  "test/res.sendStatus.js",
+                      "added":  44,
+                      "deleted":  0,
+                      "churn":  44
+                  },
+                  {
+                      "path":  "examples/static-files/index.js",
+                      "added":  43,
+                      "deleted":  0,
+                      "churn":  43
+                  },
+                  {
+                      "path":  "test/middleware.basic.js",
+                      "added":  42,
+                      "deleted":  0,
+                      "churn":  42
+                  },
+                  {
+                      "path":  "test/req.xhr.js",
+                      "added":  42,
+                      "deleted":  0,
+                      "churn":  42
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/user/index.js",
+                      "added":  41,
+                      "deleted":  0,
+                      "churn":  41
+                  },
+                  {
+                      "path":  "benchmarks/middleware.js",
+                      "added":  20,
+                      "deleted":  20,
+                      "churn":  40
+                  },
+                  {
+                      "path":  "examples/downloads/index.js",
+                      "added":  40,
+                      "deleted":  0,
+                      "churn":  40
+                  },
+                  {
+                      "path":  "test/res.locals.js",
+                      "added":  40,
+                      "deleted":  0,
+                      "churn":  40
+                  },
+                  {
+                      "path":  "examples/session/redis.js",
+                      "added":  39,
+                      "deleted":  0,
+                      "churn":  39
+                  },
+                  {
+                      "path":  "test/req.acceptsEncodings.js",
+                      "added":  39,
+                      "deleted":  0,
+                      "churn":  39
+                  },
+                  {
+                      "path":  "test/acceptance/cookie-sessions.js",
+                      "added":  38,
+                      "deleted":  0,
+                      "churn":  38
+                  },
+                  {
+                      "path":  "test/app.all.js",
+                      "added":  38,
+                      "deleted":  0,
+                      "churn":  38
+                  },
+                  {
+                      "path":  "examples/session/index.js",
+                      "added":  37,
+                      "deleted":  0,
+                      "churn":  37
+                  },
+                  {
+                      "path":  "test/req.signedCookies.js",
+                      "added":  37,
+                      "deleted":  0,
+                      "churn":  37
+                  },
+                  {
+                      "path":  "benchmarks/run",
+                      "added":  18,
+                      "deleted":  18,
+                      "churn":  36
+                  },
+                  {
+                      "path":  "examples/view-locals/user.js",
+                      "added":  36,
+                      "deleted":  0,
+                      "churn":  36
+                  },
+                  {
+                      "path":  "test/support/tmpl.js",
+                      "added":  36,
+                      "deleted":  0,
+                      "churn":  36
+                  },
+                  {
+                      "path":  "benchmarks/Makefile",
+                      "added":  17,
+                      "deleted":  17,
+                      "churn":  34
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/pet/index.js",
+                      "added":  31,
+                      "deleted":  0,
+                      "churn":  31
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/user/views/show.hbs",
+                      "added":  31,
+                      "deleted":  0,
+                      "churn":  31
+                  },
+                  {
+                      "path":  "examples/README.md",
+                      "added":  29,
+                      "deleted":  0,
+                      "churn":  29
+                  },
+                  {
+                      "path":  "test/acceptance/error.js",
+                      "added":  29,
+                      "deleted":  0,
+                      "churn":  29
+                  },
+                  {
+                      "path":  "test/req.route.js",
+                      "added":  28,
+                      "deleted":  0,
+                      "churn":  28
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/user/views/edit.hbs",
+                      "added":  27,
+                      "deleted":  0,
+                      "churn":  27
+                  },
+                  {
+                      "path":  "test/app.locals.js",
+                      "added":  26,
+                      "deleted":  0,
+                      "churn":  26
+                  },
+                  {
+                      "path":  "examples/cookie-sessions/index.js",
+                      "added":  25,
+                      "deleted":  0,
+                      "churn":  25
+                  },
+                  {
+                      "path":  "LICENSE",
+                      "added":  24,
+                      "deleted":  0,
+                      "churn":  24
+                  },
+                  {
+                      "path":  "examples/route-separation/public/style.css",
+                      "added":  24,
+                      "deleted":  0,
+                      "churn":  24
+                  },
+                  {
+                      "path":  "examples/route-separation/views/users/edit.ejs",
+                      "added":  23,
+                      "deleted":  0,
+                      "churn":  23
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/user-pet/index.js",
+                      "added":  22,
+                      "deleted":  0,
+                      "churn":  22
+                  },
+                  {
+                      "path":  "examples/auth/views/login.ejs",
+                      "added":  21,
+                      "deleted":  0,
+                      "churn":  21
+                  },
+                  {
+                      "path":  "examples/search/public/index.html",
+                      "added":  21,
+                      "deleted":  0,
+                      "churn":  21
+                  },
+                  {
+                      "path":  "test/acceptance/hello-world.js",
+                      "added":  21,
+                      "deleted":  0,
+                      "churn":  21
+                  },
+                  {
+                      "path":  "test/acceptance/markdown.js",
+                      "added":  21,
+                      "deleted":  0,
+                      "churn":  21
+                  },
+                  {
+                      "path":  "test/res.get.js",
+                      "added":  21,
+                      "deleted":  0,
+                      "churn":  21
+                  },
+                  {
+                      "path":  ".gitignore",
+                      "added":  20,
+                      "deleted":  0,
+                      "churn":  20
+                  },
+                  {
+                      "path":  "examples/auth/views/head.ejs",
+                      "added":  20,
+                      "deleted":  0,
+                      "churn":  20
+                  },
+                  {
+                      "path":  "examples/error-pages/views/index.ejs",
+                      "added":  20,
+                      "deleted":  0,
+                      "churn":  20
+                  },
+                  {
+                      "path":  "examples/view-locals/views/index.ejs",
+                      "added":  20,
+                      "deleted":  0,
+                      "churn":  20
+                  },
+                  {
+                      "path":  "test/regression.js",
+                      "added":  20,
+                      "deleted":  0,
+                      "churn":  20
+                  },
+                  {
+                      "path":  "test/req.path.js",
+                      "added":  20,
+                      "deleted":  0,
+                      "churn":  20
+                  },
+                  {
+                      "path":  "examples/content-negotiation/users.js",
+                      "added":  19,
+                      "deleted":  0,
+                      "churn":  19
+                  },
+                  {
+                      "path":  "examples/multi-router/index.js",
+                      "added":  18,
+                      "deleted":  0,
+                      "churn":  18
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/user/views/list.hbs",
+                      "added":  18,
+                      "deleted":  0,
+                      "churn":  18
+                  },
+                  {
+                      "path":  ".github/dependabot.yml",
+                      "added":  17,
+                      "deleted":  0,
+                      "churn":  17
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/pet/views/edit.ejs",
+                      "added":  17,
+                      "deleted":  0,
+                      "churn":  17
+                  },
+                  {
+                      "path":  "test/acceptance/ejs.js",
+                      "added":  17,
+                      "deleted":  0,
+                      "churn":  17
+                  },
+                  {
+                      "path":  "examples/mvc/db.js",
+                      "added":  16,
+                      "deleted":  0,
+                      "churn":  16
+                  },
+                  {
+                      "path":  "examples/hello-world/index.js",
+                      "added":  15,
+                      "deleted":  0,
+                      "churn":  15
+                  },
+                  {
+                      "path":  "examples/multi-router/controllers/api_v1.js",
+                      "added":  15,
+                      "deleted":  0,
+                      "churn":  15
+                  },
+                  {
+                      "path":  "examples/multi-router/controllers/api_v2.js",
+                      "added":  15,
+                      "deleted":  0,
+                      "churn":  15
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/pet/views/show.ejs",
+                      "added":  15,
+                      "deleted":  0,
+                      "churn":  15
+                  },
+                  {
+                      "path":  "examples/search/public/client.js",
+                      "added":  15,
+                      "deleted":  0,
+                      "churn":  15
+                  },
+                  {
+                      "path":  ".eslintrc.yml",
+                      "added":  14,
+                      "deleted":  0,
+                      "churn":  14
+                  },
+                  {
+                      "path":  "examples/mvc/public/style.css",
+                      "added":  14,
+                      "deleted":  0,
+                      "churn":  14
+                  },
+                  {
+                      "path":  "examples/route-separation/views/users/index.ejs",
+                      "added":  14,
+                      "deleted":  0,
+                      "churn":  14
+                  },
+                  {
+                      "path":  "examples/mvc/views/404.ejs",
+                      "added":  13,
+                      "deleted":  0,
+                      "churn":  13
+                  },
+                  {
+                      "path":  "examples/mvc/views/5xx.ejs",
+                      "added":  13,
+                      "deleted":  0,
+                      "churn":  13
+                  },
+                  {
+                      "path":  "examples/route-separation/post.js",
+                      "added":  13,
+                      "deleted":  0,
+                      "churn":  13
+                  },
+                  {
+                      "path":  "examples/route-separation/views/posts/index.ejs",
+                      "added":  12,
+                      "deleted":  0,
+                      "churn":  12
+                  },
+                  {
+                      "path":  ".editorconfig",
+                      "added":  11,
+                      "deleted":  0,
+                      "churn":  11
+                  },
+                  {
+                      "path":  "index.js",
+                      "added":  11,
+                      "deleted":  0,
+                      "churn":  11
+                  },
+                  {
+                      "path":  "examples/ejs/views/users.html",
+                      "added":  10,
+                      "deleted":  0,
+                      "churn":  10
+                  },
+                  {
+                      "path":  "examples/error-pages/views/error_header.ejs",
+                      "added":  10,
+                      "deleted":  0,
+                      "churn":  10
+                  },
+                  {
+                      "path":  "examples/route-separation/views/index.ejs",
+                      "added":  10,
+                      "deleted":  0,
+                      "churn":  10
+                  },
+                  {
+                      "path":  "examples/content-negotiation/db.js",
+                      "added":  9,
+                      "deleted":  0,
+                      "churn":  9
+                  },
+                  {
+                      "path":  "examples/ejs/views/header.html",
+                      "added":  9,
+                      "deleted":  0,
+                      "churn":  9
+                  },
+                  {
+                      "path":  "examples/route-separation/views/header.ejs",
+                      "added":  9,
+                      "deleted":  0,
+                      "churn":  9
+                  },
+                  {
+                      "path":  "examples/route-separation/views/users/view.ejs",
+                      "added":  9,
+                      "deleted":  0,
+                      "churn":  9
+                  },
+                  {
+                      "path":  "examples/error-pages/views/500.ejs",
+                      "added":  8,
+                      "deleted":  0,
+                      "churn":  8
+                  },
+                  {
+                      "path":  "examples/mvc/controllers/main/index.js",
+                      "added":  5,
+                      "deleted":  0,
+                      "churn":  5
+                  },
+                  {
+                      "path":  "examples/route-separation/site.js",
+                      "added":  5,
+                      "deleted":  0,
+                      "churn":  5
+                  },
+                  {
+                      "path":  ".npmrc",
+                      "added":  4,
+                      "deleted":  0,
+                      "churn":  4
+                  },
+                  {
+                      "path":  "examples/ejs/public/stylesheets/style.css",
+                      "added":  4,
+                      "deleted":  0,
+                      "churn":  4
+                  },
+                  {
+                      "path":  "examples/markdown/views/index.md",
+                      "added":  4,
+                      "deleted":  0,
+                      "churn":  4
+                  },
+                  {
+                      "path":  "examples/downloads/files/notes/groceries.txt",
+                      "added":  3,
+                      "deleted":  0,
+                      "churn":  3
+                  },
+                  {
+                      "path":  "examples/error-pages/views/404.ejs",
+                      "added":  3,
+                      "deleted":  0,
+                      "churn":  3
+                  },
+                  {
+                      "path":  "examples/static-files/public/css/style.css",
+                      "added":  3,
+                      "deleted":  0,
+                      "churn":  3
+                  },
+                  {
+                      "path":  "test/support/env.js",
+                      "added":  3,
+                      "deleted":  0,
+                      "churn":  3
+                  },
+                  {
+                      "path":  ".eslintignore",
+                      "added":  2,
+                      "deleted":  0,
+                      "churn":  2
+                  },
+                  {
+                      "path":  "examples/auth/views/foot.ejs",
+                      "added":  2,
+                      "deleted":  0,
+                      "churn":  2
+                  },
+                  {
+                      "path":  "examples/ejs/views/footer.html",
+                      "added":  2,
+                      "deleted":  0,
+                      "churn":  2
+                  },
+                  {
+                      "path":  "examples/error-pages/views/footer.ejs",
+                      "added":  2,
+                      "deleted":  0,
+                      "churn":  2
+                  },
+                  {
+                      "path":  "examples/route-separation/views/footer.ejs",
+                      "added":  2,
+                      "deleted":  0,
+                      "churn":  2
+                  },
+                  {
+                      "path":  "examples/downloads/files/amazing.txt",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "examples/static-files/public/hello.txt",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "examples/static-files/public/js/app.js",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/% of dogs.txt",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/.name",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/blog/index.html",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/blog/post/index.tmpl",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/default_layout/name.tmpl",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/default_layout/user.tmpl",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/email.tmpl",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/local_layout/user.tmpl",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/name.tmpl",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/name.txt",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/nums.txt",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/pets/names.txt",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/todo.html",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/todo.txt",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/user.html",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/user.tmpl",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/users/index.html",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/users/tobi.txt",
+                      "added":  1,
+                      "deleted":  0,
+                      "churn":  1
+                  },
+                  {
+                      "path":  "test/fixtures/broken.send",
+                      "added":  0,
+                      "deleted":  0,
+                      "churn":  0
+                  },
+                  {
+                      "path":  "test/fixtures/empty.txt",
+                      "added":  0,
+                      "deleted":  0,
+                      "churn":  0
+                  }
+              ],
+    "bus_factor":  [
+                       {
+                           "path":  "test/app.router.js",
+                           "authors":  1,
+                           "changes":  1217
+                       },
+                       {
+                           "path":  "test/res.sendFile.js",
+                           "authors":  1,
+                           "changes":  913
+                       },
+                       {
+                           "path":  "test/express.urlencoded.js",
+                           "authors":  1,
+                           "changes":  828
+                       },
+                       {
+                           "path":  "test/express.static.js",
+                           "authors":  1,
+                           "changes":  815
+                       },
+                       {
+                           "path":  "test/express.json.js",
+                           "authors":  1,
+                           "changes":  755
+                       },
+                       {
+                           "path":  "test/Router.js",
+                           "authors":  1,
+                           "changes":  636
+                       },
+                       {
+                           "path":  "test/express.text.js",
+                           "authors":  1,
+                           "changes":  566
+                       },
+                       {
+                           "path":  "test/app.use.js",
+                           "authors":  1,
+                           "changes":  542
+                       },
+                       {
+                           "path":  "test/express.raw.js",
+                           "authors":  1,
+                           "changes":  513
+                       },
+                       {
+                           "path":  "test/res.render.js",
+                           "authors":  1,
+                           "changes":  367
+                       },
+                       {
+                           "path":  "test/app.param.js",
+                           "authors":  1,
+                           "changes":  323
+                       },
+                       {
+                           "path":  "test/res.cookie.js",
+                           "authors":  1,
+                           "changes":  295
+                       },
+                       {
+                           "path":  "test/Route.js",
+                           "authors":  1,
+                           "changes":  274
+                       },
+                       {
+                           "path":  "lib/utils.js",
+                           "authors":  1,
+                           "changes":  271
+                       },
+                       {
+                           "path":  "test/res.format.js",
+                           "authors":  1,
+                           "changes":  248
+                       },
+                       {
+                           "path":  "test/config.js",
+                           "authors":  1,
+                           "changes":  207
+                       },
+                       {
+                           "path":  "test/res.status.js",
+                           "authors":  1,
+                           "changes":  206
+                       },
+                       {
+                           "path":  "lib/view.js",
+                           "authors":  1,
+                           "changes":  205
+                       },
+                       {
+                           "path":  "test/app.route.js",
+                           "authors":  1,
+                           "changes":  197
+                       },
+                       {
+                           "path":  "test/req.hostname.js",
+                           "authors":  1,
+                           "changes":  188
+                       },
+                       {
+                           "path":  "test/res.json.js",
+                           "authors":  1,
+                           "changes":  186
+                       },
+                       {
+                           "path":  "test/req.subdomains.js",
+                           "authors":  1,
+                           "changes":  173
+                       },
+                       {
+                           "path":  "test/req.is.js",
+                           "authors":  1,
+                           "changes":  169
+                       },
+                       {
+                           "path":  "test/req.host.js",
+                           "authors":  1,
+                           "changes":  156
+                       },
+                       {
+                           "path":  "examples/view-locals/index.js",
+                           "authors":  1,
+                           "changes":  155
+                       },
+                       {
+                           "path":  "test/app.request.js",
+                           "authors":  1,
+                           "changes":  143
+                       },
+                       {
+                           "path":  "test/app.response.js",
+                           "authors":  1,
+                           "changes":  143
+                       },
+                       {
+                           "path":  "test/acceptance/mvc.js",
+                           "authors":  1,
+                           "changes":  132
+                       },
+                       {
+                           "path":  "test/req.accepts.js",
+                           "authors":  1,
+                           "changes":  125
+                       },
+                       {
+                           "path":  "test/res.set.js",
+                           "authors":  1,
+                           "changes":  124
+                       },
+                       {
+                           "path":  "test/app.js",
+                           "authors":  1,
+                           "changes":  120
+                       },
+                       {
+                           "path":  "examples/web-service/index.js",
+                           "authors":  1,
+                           "changes":  117
+                       },
+                       {
+                           "path":  "test/acceptance/auth.js",
+                           "authors":  1,
+                           "changes":  117
+                       },
+                       {
+                           "path":  "test/app.options.js",
+                           "authors":  1,
+                           "changes":  116
+                       },
+                       {
+                           "path":  "test/res.append.js",
+                           "authors":  1,
+                           "changes":  116
+                       },
+                       {
+                           "path":  "test/req.ip.js",
+                           "authors":  1,
+                           "changes":  113
+                       },
+                       {
+                           "path":  "test/req.protocol.js",
+                           "authors":  1,
+                           "changes":  113
+                       },
+                       {
+                           "path":  "test/req.query.js",
+                           "authors":  1,
+                           "changes":  106
+                       },
+                       {
+                           "path":  "test/acceptance/web-service.js",
+                           "authors":  1,
+                           "changes":  105
+                       },
+                       {
+                           "path":  "test/req.range.js",
+                           "authors":  1,
+                           "changes":  104
+                       },
+                       {
+                           "path":  "examples/error-pages/index.js",
+                           "authors":  1,
+                           "changes":  103
+                       },
+                       {
+                           "path":  "test/req.secure.js",
+                           "authors":  1,
+                           "changes":  101
+                       },
+                       {
+                           "path":  "test/acceptance/error-pages.js",
+                           "authors":  1,
+                           "changes":  99
+                       },
+                       {
+                           "path":  "test/acceptance/route-separation.js",
+                           "authors":  1,
+                           "changes":  97
+                       },
+                       {
+                           "path":  "examples/mvc/index.js",
+                           "authors":  1,
+                           "changes":  95
+                       },
+                       {
+                           "path":  "examples/resource/index.js",
+                           "authors":  1,
+                           "changes":  95
+                       },
+                       {
+                           "path":  "test/res.vary.js",
+                           "authors":  1,
+                           "changes":  90
+                       },
+                       {
+                           "path":  "test/req.baseUrl.js",
+                           "authors":  1,
+                           "changes":  88
+                       },
+                       {
+                           "path":  "test/support/utils.js",
+                           "authors":  1,
+                           "changes":  86
+                       },
+                       {
+                           "path":  "examples/mvc/lib/boot.js",
+                           "authors":  1,
+                           "changes":  83
+                       },
+                       {
+                           "path":  "test/app.engine.js",
+                           "authors":  1,
+                           "changes":  83
+                       },
+                       {
+                           "path":  "test/exports.js",
+                           "authors":  1,
+                           "changes":  82
+                       },
+                       {
+                           "path":  "lib/express.js",
+                           "authors":  1,
+                           "changes":  81
+                       },
+                       {
+                           "path":  "examples/route-map/index.js",
+                           "authors":  1,
+                           "changes":  75
+                       },
+                       {
+                           "path":  "examples/params/index.js",
+                           "authors":  1,
+                           "changes":  74
+                       },
+                       {
+                           "path":  "test/acceptance/cookies.js",
+                           "authors":  1,
+                           "changes":  71
+                       },
+                       {
+                           "path":  "test/req.ips.js",
+                           "authors":  1,
+                           "changes":  71
+                       },
+                       {
+                           "path":  "test/acceptance/resource.js",
+                           "authors":  1,
+                           "changes":  68
+                       },
+                       {
+                           "path":  "test/app.head.js",
+                           "authors":  1,
+                           "changes":  66
+                       },
+                       {
+                           "path":  "test/res.links.js",
+                           "authors":  1,
+                           "changes":  65
+                       },
+                       {
+                           "path":  "test/req.acceptsCharsets.js",
+                           "authors":  1,
+                           "changes":  63
+                       },
+                       {
+                           "path":  "test/app.routes.error.js",
+                           "authors":  1,
+                           "changes":  62
+                       },
+                       {
+                           "path":  "test/res.clearCookie.js",
+                           "authors":  1,
+                           "changes":  62
+                       },
+                       {
+                           "path":  "examples/online/index.js",
+                           "authors":  1,
+                           "changes":  61
+                       },
+                       {
+                           "path":  "test/req.get.js",
+                           "authors":  1,
+                           "changes":  60
+                       },
+                       {
+                           "path":  "test/req.acceptsLanguages.js",
+                           "authors":  1,
+                           "changes":  57
+                       },
+                       {
+                           "path":  "examples/route-separation/index.js",
+                           "authors":  1,
+                           "changes":  55
+                       },
+                       {
+                           "path":  "test/app.listen.js",
+                           "authors":  1,
+                           "changes":  55
+                       },
+                       {
+                           "path":  "examples/cookies/index.js",
+                           "authors":  1,
+                           "changes":  53
+                       },
+                       {
+                           "path":  "examples/error/index.js",
+                           "authors":  1,
+                           "changes":  53
+                       },
+                       {
+                           "path":  "examples/vhost/index.js",
+                           "authors":  1,
+                           "changes":  53
+                       },
+                       {
+                           "path":  "examples/view-constructor/github-view.js",
+                           "authors":  1,
+                           "changes":  53
+                       },
+                       {
+                           "path":  "test/req.stale.js",
+                           "authors":  1,
+                           "changes":  50
+                       },
+                       {
+                           "path":  "test/acceptance/content-negotiation.js",
+                           "authors":  1,
+                           "changes":  49
+                       },
+                       {
+                           "path":  "examples/view-constructor/index.js",
+                           "authors":  1,
+                           "changes":  48
+                       },
+                       {
+                           "path":  "examples/route-separation/user.js",
+                           "authors":  1,
+                           "changes":  47
+                       },
+                       {
+                           "path":  "examples/content-negotiation/index.js",
+                           "authors":  1,
+                           "changes":  46
+                       },
+                       {
+                           "path":  "test/acceptance/vhost.js",
+                           "authors":  1,
+                           "changes":  46
+                       },
+                       {
+                           "path":  "test/acceptance/route-map.js",
+                           "authors":  1,
+                           "changes":  45
+                       },
+                       {
+                           "path":  "examples/markdown/index.js",
+                           "authors":  1,
+                           "changes":  44
+                       },
+                       {
+                           "path":  "test/acceptance/multi-router.js",
+                           "authors":  1,
+                           "changes":  44
+                       },
+                       {
+                           "path":  "test/acceptance/params.js",
+                           "authors":  1,
+                           "changes":  44
+                       },
+                       {
+                           "path":  "test/res.sendStatus.js",
+                           "authors":  1,
+                           "changes":  44
+                       },
+                       {
+                           "path":  "examples/static-files/index.js",
+                           "authors":  1,
+                           "changes":  43
+                       },
+                       {
+                           "path":  "test/middleware.basic.js",
+                           "authors":  1,
+                           "changes":  42
+                       },
+                       {
+                           "path":  "test/req.xhr.js",
+                           "authors":  1,
+                           "changes":  42
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/user/index.js",
+                           "authors":  1,
+                           "changes":  41
+                       },
+                       {
+                           "path":  "examples/downloads/index.js",
+                           "authors":  1,
+                           "changes":  40
+                       },
+                       {
+                           "path":  "test/res.locals.js",
+                           "authors":  1,
+                           "changes":  40
+                       },
+                       {
+                           "path":  "examples/session/redis.js",
+                           "authors":  1,
+                           "changes":  39
+                       },
+                       {
+                           "path":  "test/req.acceptsEncodings.js",
+                           "authors":  1,
+                           "changes":  39
+                       },
+                       {
+                           "path":  "test/acceptance/cookie-sessions.js",
+                           "authors":  1,
+                           "changes":  38
+                       },
+                       {
+                           "path":  "test/app.all.js",
+                           "authors":  1,
+                           "changes":  38
+                       },
+                       {
+                           "path":  "examples/session/index.js",
+                           "authors":  1,
+                           "changes":  37
+                       },
+                       {
+                           "path":  "test/req.signedCookies.js",
+                           "authors":  1,
+                           "changes":  37
+                       },
+                       {
+                           "path":  "examples/view-locals/user.js",
+                           "authors":  1,
+                           "changes":  36
+                       },
+                       {
+                           "path":  "test/support/tmpl.js",
+                           "authors":  1,
+                           "changes":  36
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/pet/index.js",
+                           "authors":  1,
+                           "changes":  31
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/user/views/show.hbs",
+                           "authors":  1,
+                           "changes":  31
+                       },
+                       {
+                           "path":  "examples/README.md",
+                           "authors":  1,
+                           "changes":  29
+                       },
+                       {
+                           "path":  "test/acceptance/error.js",
+                           "authors":  1,
+                           "changes":  29
+                       },
+                       {
+                           "path":  "test/req.route.js",
+                           "authors":  1,
+                           "changes":  28
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/user/views/edit.hbs",
+                           "authors":  1,
+                           "changes":  27
+                       },
+                       {
+                           "path":  "test/app.locals.js",
+                           "authors":  1,
+                           "changes":  26
+                       },
+                       {
+                           "path":  "examples/cookie-sessions/index.js",
+                           "authors":  1,
+                           "changes":  25
+                       },
+                       {
+                           "path":  "LICENSE",
+                           "authors":  1,
+                           "changes":  24
+                       },
+                       {
+                           "path":  "examples/route-separation/public/style.css",
+                           "authors":  1,
+                           "changes":  24
+                       },
+                       {
+                           "path":  "examples/route-separation/views/users/edit.ejs",
+                           "authors":  1,
+                           "changes":  23
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/user-pet/index.js",
+                           "authors":  1,
+                           "changes":  22
+                       },
+                       {
+                           "path":  "examples/auth/views/login.ejs",
+                           "authors":  1,
+                           "changes":  21
+                       },
+                       {
+                           "path":  "examples/search/public/index.html",
+                           "authors":  1,
+                           "changes":  21
+                       },
+                       {
+                           "path":  "test/acceptance/hello-world.js",
+                           "authors":  1,
+                           "changes":  21
+                       },
+                       {
+                           "path":  "test/acceptance/markdown.js",
+                           "authors":  1,
+                           "changes":  21
+                       },
+                       {
+                           "path":  "test/res.get.js",
+                           "authors":  1,
+                           "changes":  21
+                       },
+                       {
+                           "path":  ".gitignore",
+                           "authors":  1,
+                           "changes":  20
+                       },
+                       {
+                           "path":  "examples/auth/views/head.ejs",
+                           "authors":  1,
+                           "changes":  20
+                       },
+                       {
+                           "path":  "examples/error-pages/views/index.ejs",
+                           "authors":  1,
+                           "changes":  20
+                       },
+                       {
+                           "path":  "examples/view-locals/views/index.ejs",
+                           "authors":  1,
+                           "changes":  20
+                       },
+                       {
+                           "path":  "test/regression.js",
+                           "authors":  1,
+                           "changes":  20
+                       },
+                       {
+                           "path":  "test/req.path.js",
+                           "authors":  1,
+                           "changes":  20
+                       },
+                       {
+                           "path":  "examples/content-negotiation/users.js",
+                           "authors":  1,
+                           "changes":  19
+                       },
+                       {
+                           "path":  "examples/multi-router/index.js",
+                           "authors":  1,
+                           "changes":  18
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/user/views/list.hbs",
+                           "authors":  1,
+                           "changes":  18
+                       },
+                       {
+                           "path":  ".github/dependabot.yml",
+                           "authors":  1,
+                           "changes":  17
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/pet/views/edit.ejs",
+                           "authors":  1,
+                           "changes":  17
+                       },
+                       {
+                           "path":  "test/acceptance/ejs.js",
+                           "authors":  1,
+                           "changes":  17
+                       },
+                       {
+                           "path":  "examples/mvc/db.js",
+                           "authors":  1,
+                           "changes":  16
+                       },
+                       {
+                           "path":  "examples/hello-world/index.js",
+                           "authors":  1,
+                           "changes":  15
+                       },
+                       {
+                           "path":  "examples/multi-router/controllers/api_v1.js",
+                           "authors":  1,
+                           "changes":  15
+                       },
+                       {
+                           "path":  "examples/multi-router/controllers/api_v2.js",
+                           "authors":  1,
+                           "changes":  15
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/pet/views/show.ejs",
+                           "authors":  1,
+                           "changes":  15
+                       },
+                       {
+                           "path":  "examples/search/public/client.js",
+                           "authors":  1,
+                           "changes":  15
+                       },
+                       {
+                           "path":  ".eslintrc.yml",
+                           "authors":  1,
+                           "changes":  14
+                       },
+                       {
+                           "path":  "examples/mvc/public/style.css",
+                           "authors":  1,
+                           "changes":  14
+                       },
+                       {
+                           "path":  "examples/route-separation/views/users/index.ejs",
+                           "authors":  1,
+                           "changes":  14
+                       },
+                       {
+                           "path":  "examples/mvc/views/404.ejs",
+                           "authors":  1,
+                           "changes":  13
+                       },
+                       {
+                           "path":  "examples/mvc/views/5xx.ejs",
+                           "authors":  1,
+                           "changes":  13
+                       },
+                       {
+                           "path":  "examples/route-separation/post.js",
+                           "authors":  1,
+                           "changes":  13
+                       },
+                       {
+                           "path":  "examples/route-separation/views/posts/index.ejs",
+                           "authors":  1,
+                           "changes":  12
+                       },
+                       {
+                           "path":  ".editorconfig",
+                           "authors":  1,
+                           "changes":  11
+                       },
+                       {
+                           "path":  "index.js",
+                           "authors":  1,
+                           "changes":  11
+                       },
+                       {
+                           "path":  "examples/ejs/views/users.html",
+                           "authors":  1,
+                           "changes":  10
+                       },
+                       {
+                           "path":  "examples/error-pages/views/error_header.ejs",
+                           "authors":  1,
+                           "changes":  10
+                       },
+                       {
+                           "path":  "examples/route-separation/views/index.ejs",
+                           "authors":  1,
+                           "changes":  10
+                       },
+                       {
+                           "path":  "examples/content-negotiation/db.js",
+                           "authors":  1,
+                           "changes":  9
+                       },
+                       {
+                           "path":  "examples/ejs/views/header.html",
+                           "authors":  1,
+                           "changes":  9
+                       },
+                       {
+                           "path":  "examples/route-separation/views/header.ejs",
+                           "authors":  1,
+                           "changes":  9
+                       },
+                       {
+                           "path":  "examples/route-separation/views/users/view.ejs",
+                           "authors":  1,
+                           "changes":  9
+                       },
+                       {
+                           "path":  "examples/error-pages/views/500.ejs",
+                           "authors":  1,
+                           "changes":  8
+                       },
+                       {
+                           "path":  "examples/mvc/controllers/main/index.js",
+                           "authors":  1,
+                           "changes":  5
+                       },
+                       {
+                           "path":  "examples/route-separation/site.js",
+                           "authors":  1,
+                           "changes":  5
+                       },
+                       {
+                           "path":  "examples/ejs/public/stylesheets/style.css",
+                           "authors":  1,
+                           "changes":  4
+                       },
+                       {
+                           "path":  "examples/markdown/views/index.md",
+                           "authors":  1,
+                           "changes":  4
+                       },
+                       {
+                           "path":  "examples/downloads/files/notes/groceries.txt",
+                           "authors":  1,
+                           "changes":  3
+                       },
+                       {
+                           "path":  "examples/error-pages/views/404.ejs",
+                           "authors":  1,
+                           "changes":  3
+                       },
+                       {
+                           "path":  "examples/static-files/public/css/style.css",
+                           "authors":  1,
+                           "changes":  3
+                       },
+                       {
+                           "path":  "test/support/env.js",
+                           "authors":  1,
+                           "changes":  3
+                       },
+                       {
+                           "path":  ".eslintignore",
+                           "authors":  1,
+                           "changes":  2
+                       },
+                       {
+                           "path":  "examples/auth/views/foot.ejs",
+                           "authors":  1,
+                           "changes":  2
+                       },
+                       {
+                           "path":  "examples/ejs/views/footer.html",
+                           "authors":  1,
+                           "changes":  2
+                       },
+                       {
+                           "path":  "examples/error-pages/views/footer.ejs",
+                           "authors":  1,
+                           "changes":  2
+                       },
+                       {
+                           "path":  "examples/route-separation/views/footer.ejs",
+                           "authors":  1,
+                           "changes":  2
+                       },
+                       {
+                           "path":  "examples/downloads/files/amazing.txt",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "examples/static-files/public/hello.txt",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "examples/static-files/public/js/app.js",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/% of dogs.txt",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/.name",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/blog/index.html",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/blog/post/index.tmpl",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/default_layout/name.tmpl",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/default_layout/user.tmpl",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/email.tmpl",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/local_layout/user.tmpl",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/name.tmpl",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/name.txt",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/nums.txt",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/pets/names.txt",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/todo.html",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/todo.txt",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/user.html",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/user.tmpl",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/users/index.html",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/users/tobi.txt",
+                           "authors":  1,
+                           "changes":  1
+                       },
+                       {
+                           "path":  "test/fixtures/broken.send",
+                           "authors":  1,
+                           "changes":  0
+                       },
+                       {
+                           "path":  "test/fixtures/empty.txt",
+                           "authors":  1,
+                           "changes":  0
+                       },
+                       {
+                           "path":  "test/res.download.js",
+                           "authors":  2,
+                           "changes":  515
+                       },
+                       {
+                           "path":  "test/app.render.js",
+                           "authors":  2,
+                           "changes":  392
+                       },
+                       {
+                           "path":  "test/res.jsonp.js",
+                           "authors":  2,
+                           "changes":  358
+                       },
+                       {
+                           "path":  "test/res.location.js",
+                           "authors":  2,
+                           "changes":  330
+                       },
+                       {
+                           "path":  "test/res.redirect.js",
+                           "authors":  2,
+                           "changes":  222
+                       },
+                       {
+                           "path":  "examples/auth/index.js",
+                           "authors":  2,
+                           "changes":  136
+                       },
+                       {
+                           "path":  ".github/workflows/legacy.yml",
+                           "authors":  2,
+                           "changes":  131
+                       },
+                       {
+                           "path":  "test/res.attachment.js",
+                           "authors":  2,
+                           "changes":  121
+                       },
+                       {
+                           "path":  "examples/search/index.js",
+                           "authors":  2,
+                           "changes":  121
+                       },
+                       {
+                           "path":  "test/res.type.js",
+                           "authors":  2,
+                           "changes":  115
+                       },
+                       {
+                           "path":  "test/req.fresh.js",
+                           "authors":  2,
+                           "changes":  108
+                       },
+                       {
+                           "path":  ".github/workflows/codeql.yml",
+                           "authors":  2,
+                           "changes":  104
+                       },
+                       {
+                           "path":  ".github/workflows/scorecard.yml",
+                           "authors":  2,
+                           "changes":  96
+                       },
+                       {
+                           "path":  "examples/route-middleware/index.js",
+                           "authors":  2,
+                           "changes":  92
+                       },
+                       {
+                           "path":  "benchmarks/README.md",
+                           "authors":  2,
+                           "changes":  68
+                       },
+                       {
+                           "path":  "examples/ejs/index.js",
+                           "authors":  2,
+                           "changes":  59
+                       },
+                       {
+                           "path":  "test/acceptance/downloads.js",
+                           "authors":  2,
+                           "changes":  51
+                       },
+                       {
+                           "path":  "benchmarks/middleware.js",
+                           "authors":  2,
+                           "changes":  40
+                       },
+                       {
+                           "path":  "benchmarks/run",
+                           "authors":  2,
+                           "changes":  36
+                       },
+                       {
+                           "path":  "benchmarks/Makefile",
+                           "authors":  2,
+                           "changes":  34
+                       },
+                       {
+                           "path":  ".npmrc",
+                           "authors":  2,
+                           "changes":  4
+                       },
+                       {
+                           "path":  "lib/application.js",
+                           "authors":  3,
+                           "changes":  635
+                       },
+                       {
+                           "path":  "test/res.send.js",
+                           "authors":  3,
+                           "changes":  620
+                       },
+                       {
+                           "path":  ".github/workflows/ci.yml",
+                           "authors":  3,
+                           "changes":  163
+                       },
+                       {
+                           "path":  "test/utils.js",
+                           "authors":  3,
+                           "changes":  117
+                       },
+                       {
+                           "path":  "lib/request.js",
+                           "authors":  4,
+                           "changes":  549
+                       },
+                       {
+                           "path":  "lib/response.js",
+                           "authors":  5,
+                           "changes":  1092
+                       },
+                       {
+                           "path":  "Readme.md",
+                           "authors":  5,
+                           "changes":  298
+                       },
+                       {
+                           "path":  "package.json",
+                           "authors":  7,
+                           "changes":  117
+                       },
+                       {
+                           "path":  "History.md",
+                           "authors":  9,
+                           "changes":  3927
+                       }
+                   ],
+    "cadence":  {
+                    "2026-01-07":  6,
+                    "2026-01-12":  1,
+                    "2026-01-16":  2,
+                    "2026-01-17":  2,
+                    "2026-01-19":  1,
+                    "2026-02-01":  4,
+                    "2026-02-10":  3,
+                    "2026-02-14":  1,
+                    "2026-02-21":  1,
+                    "2026-02-22":  1,
+                    "2026-02-23":  1,
+                    "2026-03-01":  4,
+                    "2026-03-31":  1,
+                    "2026-04-07":  1,
+                    "2026-04-23":  3,
+                    "2026-05-04":  1,
+                    "2026-05-17":  5,
+                    "2026-06-14":  1,
+                    "2026-06-15":  3,
+                    "2026-06-16":  3,
+                    "2026-07-05":  1,
+                    "2026-07-06":  2,
+                    "2026-07-12":  1,
+                    "2026-07-27":  1
+                }
+}
