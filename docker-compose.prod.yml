@@ -6,12 +6,16 @@ name: techdebt-radar-prod
 #
 # Uso:
 #   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# Nota: 'ports' se CONCATENA entre archivos compose; para reemplazar la lista
+# de la base hay que usar la etiqueta YAML '!override' (si no, el API y el
+# frontend acaban publicando el mismo puerto 2 veces -> "address already in use").
 
 services:
   api:
-    ports:
+    ports: !override
       - "127.0.0.1:8001:8000"
 
   frontend:
-    ports:
+    ports: !override
       - "127.0.0.1:8088:80"
