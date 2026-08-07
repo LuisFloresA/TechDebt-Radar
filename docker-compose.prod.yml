@@ -12,10 +12,15 @@ name: techdebt-radar-prod
 # frontend acaban publicando el mismo puerto 2 veces -> "address already in use").
 
 services:
+  # La API queda SOLO interna (127.0.0.1): solo la alcanza el proxy nginx del
+  # frontend. Nunca se expone al publico.
   api:
     ports: !override
       - "127.0.0.1:8001:8000"
 
+  # El frontend SÍ se expone en 0.0.0.0:8088: sirve el SPA y hace de proxy a
+  # /api (con rate limiting y CSP). Para HTTPS con dominio se pone Caddy
+  # delante y se devuelve este a 127.0.0.1:8088.
   frontend:
     ports: !override
-      - "127.0.0.1:8088:80"
+      - "8088:80"
