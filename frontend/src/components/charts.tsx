@@ -13,37 +13,38 @@ const AXIS_LABELS: Record<keyof ScoreComponents, string> = {
 
 export function RadarChart({ components }: { components: ScoreComponents }) {
   return (
-    <Radar
-      data={{
-        labels: Object.keys(AXIS_LABELS).map(
-          (k) => AXIS_LABELS[k as keyof ScoreComponents],
-        ),
-        datasets: [
-          {
-            label: 'Salud por componente (0-100)',
-            data: Object.values(components),
-            borderColor: '#22d3ee',
-            backgroundColor: 'rgba(34, 211, 238, 0.2)',
-            pointBackgroundColor: '#22d3ee',
+    <div className="chart-box">
+      <Radar
+        data={{
+          labels: Object.keys(AXIS_LABELS).map(
+            (k) => AXIS_LABELS[k as keyof ScoreComponents],
+          ),
+          datasets: [
+            {
+              label: 'Salud por componente (0-100)',
+              data: Object.values(components),
+              borderColor: '#22d3ee',
+              backgroundColor: 'rgba(34, 211, 238, 0.2)',
+              pointBackgroundColor: '#22d3ee',
+            },
+          ],
+        }}
+        options={{
+          scales: {
+            r: {
+              min: 0,
+              max: 100,
+              ticks: { stepSize: 25 },
+              grid: { color: 'rgba(148, 163, 184, 0.2)' },
+              angleLines: { color: 'rgba(148, 163, 184, 0.2)' },
+            },
           },
-        ],
-      }}
-      options={{
-        scales: {
-          r: {
-            min: 0,
-            max: 100,
-            ticks: { stepSize: 25 },
-            grid: { color: 'rgba(148, 163, 184, 0.2)' },
-            angleLines: { color: 'rgba(148, 163, 184, 0.2)' },
-          },
-        },
-        plugins: { legend: { display: false } },
-        responsive: true,
-        maintainAspectRatio: false,
-      }}
-      height={280}
-    />
+          plugins: { legend: { display: false } },
+          responsive: true,
+          maintainAspectRatio: false,
+        }}
+      />
+    </div>
   )
 }
 
@@ -61,108 +62,112 @@ function riskColor(authors: number): string {
 export function HotspotsChart({ hotspots }: { hotspots: Hotspot[] }) {
   const top = hotspots.slice(0, TOP).reverse()
   return (
-    <Bar
-      data={{
-        labels: top.map((h) => shortPath(h.path)),
-        datasets: [
-          {
-            label: 'Cambios (líneas)',
-            data: top.map((h) => h.changes),
-            backgroundColor: '#3b82f6',
-          },
-        ],
-      }}
-      options={{
-        indexAxis: 'y',
-        plugins: { legend: { display: false } },
-        responsive: true,
-        maintainAspectRatio: false,
-      }}
-      height={280}
-    />
+    <div className="chart-box">
+      <Bar
+        data={{
+          labels: top.map((h) => shortPath(h.path)),
+          datasets: [
+            {
+              label: 'Cambios (líneas)',
+              data: top.map((h) => h.changes),
+              backgroundColor: '#3b82f6',
+            },
+          ],
+        }}
+        options={{
+          indexAxis: 'y',
+          plugins: { legend: { display: false } },
+          responsive: true,
+          maintainAspectRatio: false,
+        }}
+      />
+    </div>
   )
 }
 
 export function ChurnChart({ churn }: { churn: ChurnEntry[] }) {
   const top = churn.slice(0, TOP).reverse()
   return (
-    <Bar
-      data={{
-        labels: top.map((c) => shortPath(c.path)),
-        datasets: [
-          {
-            label: 'Añadidas',
-            data: top.map((c) => c.added),
-            backgroundColor: '#22c55e',
-          },
-          {
-            label: 'Eliminadas',
-            data: top.map((c) => c.deleted),
-            backgroundColor: '#ef4444',
-          },
-        ],
-      }}
-      options={{
-        indexAxis: 'y',
-        scales: { x: { stacked: false } },
-        responsive: true,
-        maintainAspectRatio: false,
-      }}
-      height={280}
-    />
+    <div className="chart-box">
+      <Bar
+        data={{
+          labels: top.map((c) => shortPath(c.path)),
+          datasets: [
+            {
+              label: 'Añadidas',
+              data: top.map((c) => c.added),
+              backgroundColor: '#22c55e',
+            },
+            {
+              label: 'Eliminadas',
+              data: top.map((c) => c.deleted),
+              backgroundColor: '#ef4444',
+            },
+          ],
+        }}
+        options={{
+          indexAxis: 'y',
+          scales: { x: { stacked: false } },
+          responsive: true,
+          maintainAspectRatio: false,
+        }}
+      />
+    </div>
   )
 }
 
 export function BusFactorChart({ entries }: { entries: BusFactorEntry[] }) {
   const top = entries.slice(0, TOP).reverse()
   return (
-    <Bar
-      data={{
-        labels: top.map((b) => shortPath(b.path)),
-        datasets: [
-          {
-            label: 'Autores por archivo',
-            data: top.map((b) => b.authors),
-            backgroundColor: top.map((b) => riskColor(b.authors)),
-          },
-        ],
-      }}
-      options={{
-        indexAxis: 'y',
-        plugins: { legend: { display: false } },
-        scales: { x: { min: 0 } },
-        responsive: true,
-        maintainAspectRatio: false,
-      }}
-      height={280}
-    />
+    <div className="chart-box">
+      <Bar
+        data={{
+          labels: top.map((b) => shortPath(b.path)),
+          datasets: [
+            {
+              label: 'Autores por archivo',
+              data: top.map((b) => b.authors),
+              backgroundColor: top.map((b) => riskColor(b.authors)),
+            },
+          ],
+        }}
+        options={{
+          indexAxis: 'y',
+          plugins: { legend: { display: false } },
+          scales: { x: { min: 0 } },
+          responsive: true,
+          maintainAspectRatio: false,
+        }}
+      />
+    </div>
   )
 }
 
 export function CadenceChart({ cadence }: { cadence: Record<string, number> }) {
   const days = Object.keys(cadence).sort()
   return (
-    <Line
-      data={{
-        labels: days,
-        datasets: [
-          {
-            label: 'Commits',
-            data: days.map((d) => cadence[d]),
-            borderColor: '#8b5cf6',
-            backgroundColor: 'rgba(139, 92, 246, 0.15)',
-            fill: true,
-            tension: 0.3,
-          },
-        ],
-      }}
-      options={{
-        plugins: { legend: { display: false } },
-        scales: { x: { ticks: { maxTicksLimit: 8 } } },
-        responsive: true,
-        maintainAspectRatio: false,
-      }}
-      height={280}
-    />
+    <div className="chart-box">
+      <Line
+        data={{
+          labels: days,
+          datasets: [
+            {
+              label: 'Commits',
+              data: days.map((d) => cadence[d]),
+              borderColor: '#8b5cf6',
+              backgroundColor: 'rgba(139, 92, 246, 0.15)',
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        }}
+        options={{
+          plugins: { legend: { display: false } },
+          scales: { x: { ticks: { maxTicksLimit: 8 } } },
+          responsive: true,
+          maintainAspectRatio: false,
+        }}
+      />
+    </div>
   )
 }
