@@ -42,7 +42,7 @@ class RepoAnalysis:
             self.commits_per_day = defaultdict(int)
 
 
-def run_git_log(repo: Path) -> str:
+def run_git_log(repo: Path, all_branches: bool = False) -> str:
     """Ejecuta `git log --numstat` y devuelve su salida."""
     cmd = [
         "git",
@@ -53,6 +53,8 @@ def run_git_log(repo: Path) -> str:
         "--pretty=format:COMMIT %H|%an|%ad",
         "--date=short",
     ]
+    if all_branches:
+        cmd.append("--all")
     result = subprocess.run(
         cmd, capture_output=True, text=True, check=True, cwd=str(repo)
     )

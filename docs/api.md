@@ -19,19 +19,31 @@ Indica que la base de datos está lista. Devuelve 200 cuando lo está.
 curl http://localhost:8001/api/health/ready   # 200
 ```
 
+### `GET /api/repos/{owner}/{repo}/branches`
+Lista las ramas de un repositorio GitHub (via `git ls-remote --heads`, sin clonar), ordenadas por la API tal cual y con `default` (la rama por defecto detectada: `main` si existe).
+
+```bash
+curl http://localhost:8001/api/repos/expressjs/express/branches
+# {"branches":["main","v5","v4", ...],"default":"main"}
+```
+
+- `404`: owner/repo inválido o repo inaccesible/inexistente.
+- `429`: demasiadas peticiones por IP.
+
 ### `POST /api/analyze`
 Inicia el análisis asíncrono de un repositorio GitHub público.
 
-- Body: `{"url": "https://github.com/owner/repo"}`
-- Respuesta: `202 Accepted` con el `Job` creado.
-- `422`: URL inválida (no GitHub, sin https, ruta malformada o host no verificable).
+- Body: `{"url": "https://github.com/owner/repo", "branch": "main"}`.
+- `branch`: puede ser una rama concreta (`main`, `dev`, `feature/x`) o `"all"` para todas las ramas. Por defecto: `"main"`.
+- Respuesta: `202 Accepted` con el `Job` creado (incluye `branch`).
+- `422`: URL inválida, o nombre de rama inválido.
 - `429`: demasiadas peticiones por IP o demasiados análisis en vuelo.
 
 ```bash
 curl -X POST http://localhost:8001/api/analyze \
   -H "Content-Type: application/json" \
-  -d '{"url":"https://github.com/octocat/Hello-World"}'
-# -> 202 {"id":1,"url":"...","status":"queued","progress":0,"error":null,...}
+  -d '{"url":"https://github.com/octocat/Hello-World","branch":"all"}'
+# -> 202 {"id":1,"url":"...","branch":"all","status":"queued","progress":0,...}
 ```
 
 ### `GET /api/jobs/{id}`

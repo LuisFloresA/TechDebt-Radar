@@ -21,6 +21,7 @@ class Job(Base):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     url: Mapped[str] = mapped_column(String(500))
+    branch: Mapped[str] = mapped_column(String(20), default="main")
     status: Mapped[str] = mapped_column(String(20), default="pending")
     progress: Mapped[int] = mapped_column(Integer, default=0)
     error: Mapped[str | None] = mapped_column(Text, nullable=True)

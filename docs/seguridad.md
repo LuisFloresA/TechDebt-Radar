@@ -21,7 +21,8 @@ Postura de seguridad de TechDebt Radar. El servicio acepta repositorios de terce
 - La ruta debe encajar `owner/repo` y no contener `..`.
 
 ### 2. Clonado seguro — `backend/app/clone/clone.py`
-- Clon *shallow*, `--single-branch`, `--no-tags`.
+- Clon *shallow* (`--depth`) y `--no-tags`; con una rama concreta usa `--single-branch --branch <rama>`, y con `"all"` omite `--single-branch`.
+- Listado de ramas (`ls-remote`) con timeout propio y cache corta, sin clonar el árbol.
 - Directorio aislado por job bajo el storage (`job-{id}`), verificado con `resolve().is_relative_to(base)`.
 - Límites de tamaño y timeout; `GIT_TERMINAL_PROMPT=0` para evitar prompts.
 - El código nunca se ejecuta (no hay `exec`, `eval` ni contenedores de build).
@@ -50,6 +51,7 @@ MAX_IN_FLIGHT_JOBS=3
 MAX_REPO_SIZE_MB=200
 CLONE_DEPTH=50
 CLONE_TIMEOUT_SECONDS=120
+LS_REMOTE_TIMEOUT_SECONDS=20
 ```
 
 ## Pendientes / mejoras futuras

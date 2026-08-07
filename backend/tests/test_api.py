@@ -1,26 +1,6 @@
 """Tests de la API y del pipeline asíncrono (Celery eager)."""
 
-from pathlib import Path
-
-import pytest
 from fastapi.testclient import TestClient
-
-from app.workers.celery_app import celery_app
-
-
-@pytest.fixture(autouse=True)
-def _eager(monkeypatch: pytest.MonkeyPatch) -> None:
-    celery_app.conf.task_always_eager = True
-    celery_app.conf.task_eager_propagates = True
-
-
-@pytest.fixture()
-def _local_clone(monkeypatch: pytest.MonkeyPatch, fake_repo: Path) -> None:
-    """Evita redir hacia GitHub: el 'clon' es el repo ficticio local."""
-
-    import app.workers.tasks as tasks
-
-    monkeypatch.setattr(tasks, "clone_to_storage", lambda ref, job_id: fake_repo)
 
 
 def test_analyze_rejects_invalid_url(client: TestClient) -> None:

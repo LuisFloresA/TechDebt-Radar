@@ -10,6 +10,18 @@ from pydantic import BaseModel, ConfigDict, Field
 
 class AnalyzeRequest(BaseModel):
     url: str = Field(..., description="URL https del repositorio GitHub público.")
+    branch: str = Field(
+        "main",
+        description=(
+            'Rama a analizar ("main" o un nombre concreto) '
+            'o "all" para todas las ramas.'
+        ),
+    )
+
+
+class BranchesResponse(BaseModel):
+    branches: list[str]
+    default: str = "main"
 
 
 class JobOut(BaseModel):
@@ -17,6 +29,7 @@ class JobOut(BaseModel):
 
     id: int
     url: str
+    branch: str = "main"
     status: str
     progress: int
     error: str | None = None
