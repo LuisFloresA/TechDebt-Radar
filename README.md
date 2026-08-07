@@ -1,8 +1,18 @@
 # TechDebt Radar
 
+[![CI](https://img.shields.io/github/actions/workflow/status/LuisFloresA/TechDebt-Radar/ci.yml?branch=main&label=CI)](https://github.com/LuisFloresA/TechDebt-Radar/actions)
+
 Analítica de salud técnica de repositorios. Introduces una URL de GitHub y la plataforma analiza el historial de Git y el árbol de código para producir un dashboard con métricas accionables: deuda técnica, hotspots, bus factor, churn y un score de salud global.
 
-**Estado:** F2 — deuda estática + score 0-100 + radar. Ver README de planificación en `docs/planificacion/`.
+**Estado:** F3 — contenido y hardening (docs, rate limiting, CSP, cobertura). Ver README de planificación en `docs/planificacion/`.
+
+## Documentación
+
+- [Arquitectura y ADRs](docs/arquitectura.md) — componentes, algoritmo de score, decisiones de diseño.
+- [API](docs/api.md) — endpoints y ejemplos de `curl`.
+- [Demo](docs/demo.md) — guión de demostración.
+- [Seguridad](docs/seguridad.md) — modelo de amenazas y mitigaciones.
+- [Write-up técnico](docs/writeup.md) — resumen del proyecto para portafolio.
 
 ---
 
@@ -33,6 +43,13 @@ Cliente -> API (FastAPI) -> Redis/Celery -> Worker
    |-> scoring ponderado -> score 0-100 + radar + recomendaciones
    |-> guarda Report (SQLite)
 ```
+
+## F3 · Contenido y hardening
+
+- **Documentación**: arquitectura con ADRs y algoritmo de score (`docs/`), API, guion de demo, postura de seguridad y write-up técnico.
+- **Hardening API**: rate limiting por IP (ventana deslizante) en `/api/analyze`, límite de **jobs en vuelo**, validación de rutas bajo el storage.
+- **Hardening infra**: CSP estricta, `Permissions-Policy` y headers de seguridad, `limit_req` y timeouts de proxy en nginx.
+- **Calidad**: cobertura de tests en CI (`pytest --cov`), badge de CI en el README.
 
 ## Quickstart
 
@@ -99,7 +116,7 @@ techdebt-radar/
 
 ## Roadmap
 
-F0 esqueleto → F1 Git Analytics MVP → F2 deuda + score (✓) → F3 contenido/deploy → F4 (opt) integración. Ver `docs/planificacion/`.
+F0 esqueleto → F1 Git Analytics MVP → F2 deuda + score (✓) → F3 contenido y hardening → F4 deploy (independiente) → F5 (opt) integración. Ver `docs/planificacion/`.
 
 ## Licencia
 

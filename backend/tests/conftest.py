@@ -11,6 +11,8 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
+from app.core.config import get_settings
+from app.core.ratelimit import reset
 from app.db.session import Base, engine
 from app.main import app
 
@@ -26,6 +28,18 @@ def _clean_db() -> Iterator[None]:
     Base.metadata.create_all(engine)
     yield
     Base.metadata.drop_all(engine)
+
+
+@pytest.fixture(autouse=True)
+def _rate_limit_clean() -> Iterator[None]:
+    """Limita alto por defecto y resetea el estado entre tests."""
+    settings = get_settings()
+    previous = settings.rate_limit_per_minute
+    settings.rate_limit_per_minute = 1000
+    reset()
+    yield
+    settings.rate_limit_per_minute = previous
+    reset()
 
 
 @pytest.fixture()

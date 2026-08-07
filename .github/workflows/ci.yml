@@ -41,8 +41,8 @@ jobs:
       - name: Lint (ruff)
         run: ruff check .
 
-      - name: Tests (pytest)
-        run: pytest
+      - name: Tests (pytest + coverage)
+        run: pytest --cov=app --cov-report=term-missing
 
   frontend:
     name: Frontend (typecheck + test + build)

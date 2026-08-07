@@ -23,6 +23,9 @@ class Settings(BaseSettings):
     clone_depth: int = 50
     clone_timeout_seconds: int = 120
 
+    rate_limit_per_minute: int = 5
+    max_in_flight_jobs: int = 3
+
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", case_sensitive=False
     )

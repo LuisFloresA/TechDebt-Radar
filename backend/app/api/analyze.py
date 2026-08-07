@@ -4,16 +4,25 @@ from __future__ import annotations
 
 import json
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.orm import Session
 
 from app.clone.validation import InvalidRepo, parse_github_url
+from app.core.config import get_settings
+from app.core.ratelimit import client_ip, is_rate_limited
 from app.db import get_db
 from app.db.models import Job, Report
 from app.schemas import AnalyzeRequest, JobOut, ReportOut, ReportResponse
 from app.workers.tasks import analyze_repo
 
 router = APIRouter(prefix="/api", tags=["analyze"])
+
+_ACTIVE_STATUSES = ("queued", "running")
+
+
+def _client_ip(request: Request) -> str:
+    return client_ip(request.client.host if request.client else "unknown",
+                     request.headers.get("X-Forwarded-For"))
 
 
 @router.post(
@@ -23,8 +32,24 @@ router = APIRouter(prefix="/api", tags=["analyze"])
     summary="Inicia el análisis de un repositorio",
 )
 def start_analysis(
-    payload: AnalyzeRequest, db: Session = Depends(get_db)
+    payload: AnalyzeRequest, request: Request, db: Session = Depends(get_db)
 ) -> Job:
+    if is_rate_limited(_client_ip(request)):
+        raise HTTPException(
+            status_code=429, detail="Demasiadas peticiones. Inténtalo en un minuto."
+        )
+
+    active = (
+        db.query(Job)
+        .filter(Job.status.in_(_ACTIVE_STATUSES))
+        .count()
+    )
+    if active >= get_settings().max_in_flight_jobs:
+        raise HTTPException(
+            status_code=429,
+            detail="Demasiados análisis en curso. Espera a que termine uno.",
+        )
+
     try:
         parse_github_url(payload.url)
     except InvalidRepo as exc:

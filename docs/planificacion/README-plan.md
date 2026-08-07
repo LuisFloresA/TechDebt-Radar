@@ -82,16 +82,19 @@ Criterio de salida: analizar un repo y ver los indicadores de historial en el da
 
 Criterio de salida: el reporte incluye score, desglose y recomendaciones accionables.
 
-### F3 — Contenido y producción (3-4 días)
+### F3 — Contenido y hardening (3-4 días)
 - README completo y `docs/` (arquitectura, api, demo, seguridad, ADRs).
-- Hardening: rate limiting, CSP, validación de rutas, límites de clonado.
-- Tests con cobertura y CI de despliegue.
-- Deploy en Render/OCI con badge de CI.
+- Hardening: rate limiting, CSP, validación de rutas, límites de clonado, cancel de jobs.
+- Tests con cobertura y CI mejorado.
 - Write-up técnico asociado.
 
-Criterio de salida: servicio público con demo funcional y documentación completa.
+Criterio de salida: documentación completa y postura de seguridad endurecida, sin depender de un hosting externo.
 
-### F4 — Integración ampliada (opcional, 5-7 días)
+### F4 — Deploy (independiente, 1-2 días)
+- Despliegue en Render/OCI con badge de CI.
+- Criterio de salida: servicio público con demo funcional.
+
+### F5 — Integración ampliada (opcional, 5-7 días)
 - Soporte de GitLab/Bitbucket.
 - Historial *over-time* al re-analizar el mismo repositorio.
 - Autenticación y proyectos por cuenta.
