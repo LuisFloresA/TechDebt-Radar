@@ -68,7 +68,14 @@ def clone_repo(ref: RepoRef, dest: Path) -> None:
 def clone_to_storage(ref: RepoRef, job_id: int) -> Path:
     """Clona dentro del directorio de storage aislado por job."""
     settings = get_settings()
-    root = Path(settings.repo_storage_dir) / str(job_id)
+    base = Path(settings.repo_storage_dir).resolve()
+    base.mkdir(parents=True, exist_ok=True)
+
+    job_dir = f"job-{int(job_id)}"
+    root = base / job_dir
+    if not root.resolve().is_relative_to(base):
+        raise CloneError("Ruta de job inválida (fuera del storage)")
+
     shutil.rmtree(root, ignore_errors=True)
     clone_repo(ref, root)
     return root

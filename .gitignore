@@ -8,6 +8,8 @@ venv/
 .ruff_cache/
 .mypy_cache/
 .tox/
+.coverage
+htmlcov/
 
 # Node
 node_modules/
