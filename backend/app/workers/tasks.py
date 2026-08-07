@@ -36,18 +36,19 @@ def _update(
 
 
 @celery_app.task(name="app.workers.tasks.analyze_repo")
-def analyze_repo(job_id: int, url: str) -> dict:
+def analyze_repo(job_id: int, url: str, branch: str = "main") -> dict:
     """Clona un repo, extrae el historial y persiste el reporte."""
     _update(job_id, status="running", progress=5, error=None)
     repo = None
     try:
         ref: RepoRef = parse_github_url(url)
         _update(job_id, progress=20)
-        repo = clone_to_storage(ref, job_id)
+        repo = clone_to_storage(ref, job_id, branch=branch)
         _update(job_id, progress=55)
-        output = run_git_log(repo)
+        output = run_git_log(repo, all_branches=branch == "all")
         analysis = parse_numstat(output)
         metrics = build_report(analysis, repo)
+        metrics["branch"] = branch
         _update(job_id, progress=85)
 
         db = SessionLocal()

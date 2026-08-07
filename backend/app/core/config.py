@@ -25,6 +25,7 @@ class Settings(BaseSettings):
 
     rate_limit_per_minute: int = 5
     max_in_flight_jobs: int = 3
+    ls_remote_timeout_seconds: int = 20
 
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", case_sensitive=False

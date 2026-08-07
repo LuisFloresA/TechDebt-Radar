@@ -22,6 +22,7 @@ Backend de análisis asíncrono del historial de repositorios GitHub + dashboard
 
 - `POST /api/analyze` crea un *job* y lo envía a Celery vía Redis.
 - El worker clona el repo de forma **segura** (anti-SSRF, shallow `--depth`, límite de tamaño), extrae `git log --numstat` y calcula **hotspots**, **churn**, **bus factor** y **cadencia**.
+- El formulario permite elegir el ámbito del análisis: **una rama** (por defecto `main`) o **todas las ramas**; lista las ramas con `git ls-remote` sin clonar.
 - `GET /api/jobs/{id}` devuelve el estado y, si terminó, el reporte con las métricas.
 - Dashboard (React 19 + Chart.js): form de análisis con *polling*, cards de resumen y widgets **Hotspots**, **Churn**, **Bus factor** y **Cadencia**.
 - **Modo demo** sin red: semilla embebida (express/express) con botón "Ver demo".
@@ -66,7 +67,7 @@ curl http://localhost:8001/api/health/ready  # 200
 # Analizar un repositorio público
 curl -X POST http://localhost:8001/api/analyze \
   -H "Content-Type: application/json" \
-  -d '{"url":"https://github.com/LuisFloresA/TechDebt-Radar"}'
+  -d '{"url":"https://github.com/LuisFloresA/TechDebt-Radar","branch":"main"}'
 # -> 202 {"id":1, "status":"queued", ...}
 
 # Estado / reporte

@@ -23,22 +23,23 @@ def _size_mb(path: Path) -> float:
     return total / (1024 * 1024)
 
 
-def clone_repo(ref: RepoRef, dest: Path) -> None:
+def clone_repo(
+    ref: RepoRef,
+    dest: Path,
+    branch: str | None = "main",
+    all_branches: bool = False,
+) -> None:
     """Clona `ref` en `dest` de forma aislada y con límites."""
     settings = get_settings()
     dest.mkdir(parents=True, exist_ok=True)
 
     depth = max(1, settings.clone_depth)
-    cmd = [
-        "git",
-        "clone",
-        "--depth",
-        str(depth),
-        "--single-branch",
-        "--no-tags",
-        ref.clone_url,
-        str(dest),
-    ]
+    cmd = ["git", "clone", "--depth", str(depth), "--no-tags"]
+    if all_branches:
+        cmd.append("--no-single-branch")
+    else:
+        cmd.extend(["--single-branch", "--branch", branch or "main"])
+    cmd += [ref.clone_url, str(dest)]
 
     try:
         subprocess.run(
@@ -65,7 +66,9 @@ def clone_repo(ref: RepoRef, dest: Path) -> None:
         )
 
 
-def clone_to_storage(ref: RepoRef, job_id: int) -> Path:
+def clone_to_storage(
+    ref: RepoRef, job_id: int, branch: str = "main"
+) -> Path:
     """Clona dentro del directorio de storage aislado por job."""
     settings = get_settings()
     base = Path(settings.repo_storage_dir).resolve()
@@ -77,7 +80,8 @@ def clone_to_storage(ref: RepoRef, job_id: int) -> Path:
         raise CloneError("Ruta de job inválida (fuera del storage)")
 
     shutil.rmtree(root, ignore_errors=True)
-    clone_repo(ref, root)
+    all_branches = branch == "all"
+    clone_repo(ref, root, branch=branch, all_branches=all_branches)
     return root
 
 

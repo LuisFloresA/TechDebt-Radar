@@ -76,6 +76,7 @@ export interface ReportMetrics {
 export interface Job {
   id: number
   url: string
+  branch?: string
   status: 'queued' | 'running' | 'succeeded' | 'failed'
   progress: number
   error?: string | null

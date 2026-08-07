@@ -10,6 +10,8 @@ from urllib.parse import urlparse
 
 GITHUB_HOSTS = ("github.com", "www.github.com")
 _REPO_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/?$")
+_OWNER_PATTERN = re.compile(r"^[A-Za-z0-9_.-]+$")
+_BRANCH_PATTERN = re.compile(r"^[A-Za-z0-9_][A-Za-z0-9_.\-/]{0,255}$")
 
 
 class InvalidRepo(ValueError):
@@ -67,3 +69,26 @@ def parse_github_url(url: str) -> RepoRef:
         raise InvalidRepo("Ruta de repositorio inválida")
 
     return RepoRef(owner=owner, repo=repo)
+
+
+def validate_owner_repo(owner: str, repo: str) -> RepoRef:
+    """Valida los componentes owner/repo de una URL de GitHub."""
+    if not owner or not repo:
+        raise InvalidRepo("owner y repo son obligatorios")
+    if not _OWNER_PATTERN.fullmatch(owner) or not _OWNER_PATTERN.fullmatch(repo):
+        raise InvalidRepo("owner/repo contiene caracteres inválidos")
+    if ".." in owner or ".." in repo:
+        raise InvalidRepo("owner/repo inválido")
+    return RepoRef(owner=owner, repo=repo)
+
+
+def validate_branch_name(branch: str) -> str:
+    """Valida un nombre de rama. Devuelve el nombre normalizado."""
+    value = branch.strip()
+    if value == "all":
+        return value
+    if not _BRANCH_PATTERN.fullmatch(value):
+        raise InvalidRepo("Nombre de rama inválido")
+    if ".." in value or "@{" in value or value.lstrip().startswith("-"):
+        raise InvalidRepo("Nombre de rama inválido")
+    return value

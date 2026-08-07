@@ -103,6 +103,27 @@ body {
   font-size: 0.95rem;
 }
 
+.analyze-form__branch {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.analyze-form__branch-label {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.analyze-form__select {
+  padding: 12px 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0b1220;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  max-width: 220px;
+}
+
 .analyze-form__error {
   color: #f87171;
   margin: 8px 0 0;

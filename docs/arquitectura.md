@@ -88,6 +88,9 @@ Se ordenan por severidad (alta → baja).
 ### ADR-007 · Rate limiting en API y nginx
 **Estado:** aceptado. **Decisión:** limitador deslizante en memoria en la API (`rate_limit_per_minute`) y `limit_req` en nginx como defensa en profundidad; además un límite de jobs en vuelo para proteger los recursos de clonado.
 
+### ADR-008 · Ámbito del historial seleccionable (rama / todas las ramas)
+**Estado:** aceptado. **Decisión:** el formulario permite elegir `branch` (una rama concreta, por defecto `main`) o `"all"` (todas las ramas). Las ramas se listan con `git ls-remote --heads` (ligero, sin clonar); el clon usa `--single-branch --branch <rama>`, y con `"all"` se omite `--single-branch` y `git log` usa `--all`. En ambos casos el clon es *shallow* (`--depth`), lo que limita el coste de repos grandes. [Desplazado a recomendar para F5 el over-time por rama.]
+
 ## Límites de recursos
 
 | Límite | Valor | Config |
@@ -95,5 +98,6 @@ Se ordenan por severidad (alta → baja).
 | Profundidad del clon | 50 commits | `CLONE_DEPTH` |
 | Tamaño máximo del repo | 200 MB | `MAX_REPO_SIZE_MB` |
 | Timeout del clon | 120 s | `CLONE_TIMEOUT_SECONDS` |
+| Timeout ls-remote | 20 s | `LS_REMOTE_TIMEOUT_SECONDS` |
 | Rate limit por IP | 5 req/min | `RATE_LIMIT_PER_MINUTE` |
 | Jobs en vuelo | 3 | `MAX_IN_FLIGHT_JOBS` |

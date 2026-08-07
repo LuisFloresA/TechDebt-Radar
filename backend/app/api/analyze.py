@@ -7,12 +7,24 @@ import json
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from sqlalchemy.orm import Session
 
-from app.clone.validation import InvalidRepo, parse_github_url
+from app.clone.branches import BranchListError, repo_heads
+from app.clone.validation import (
+    InvalidRepo,
+    parse_github_url,
+    validate_branch_name,
+    validate_owner_repo,
+)
 from app.core.config import get_settings
 from app.core.ratelimit import client_ip, is_rate_limited
 from app.db import get_db
 from app.db.models import Job, Report
-from app.schemas import AnalyzeRequest, JobOut, ReportOut, ReportResponse
+from app.schemas import (
+    AnalyzeRequest,
+    BranchesResponse,
+    JobOut,
+    ReportOut,
+    ReportResponse,
+)
 from app.workers.tasks import analyze_repo
 
 router = APIRouter(prefix="/api", tags=["analyze"])
@@ -23,6 +35,24 @@ _ACTIVE_STATUSES = ("queued", "running")
 def _client_ip(request: Request) -> str:
     return client_ip(request.client.host if request.client else "unknown",
                      request.headers.get("X-Forwarded-For"))
+
+
+@router.get(
+    "/repos/{owner}/{repo}/branches",
+    response_model=BranchesResponse,
+    summary="Lista las ramas de un repositorio GitHub",
+)
+def list_branches(owner: str, repo: str, request: Request) -> BranchesResponse:
+    if is_rate_limited(_client_ip(request)):
+        raise HTTPException(
+            status_code=429, detail="Demasiadas peticiones. Inténtalo en un minuto."
+        )
+    try:
+        ref = validate_owner_repo(owner, repo)
+        branches, default = repo_heads(ref)
+    except (InvalidRepo, BranchListError) as exc:
+        raise HTTPException(status_code=404, detail=str(exc)) from exc
+    return BranchesResponse(branches=branches, default=default)
 
 
 @router.post(
@@ -55,11 +85,16 @@ def start_analysis(
     except InvalidRepo as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
-    job = Job(url=payload.url.strip(), status="queued")
+    try:
+        branch = validate_branch_name(payload.branch)
+    except InvalidRepo as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+    job = Job(url=payload.url.strip(), branch=branch, status="queued")
     db.add(job)
     db.commit()
     db.refresh(job)
-    analyze_repo.delay(job.id, job.url)
+    analyze_repo.delay(job.id, job.url, branch=branch)
     return job
 
 
