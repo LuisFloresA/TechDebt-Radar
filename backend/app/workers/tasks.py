@@ -4,11 +4,11 @@ from __future__ import annotations
 
 import json
 
+from app.analytics import build_report
 from app.clone.clone import cleanup, clone_to_storage
 from app.clone.validation import RepoRef, parse_github_url
 from app.db.models import Job, Report
 from app.db.session import SessionLocal
-from app.gitana.metrics import summarize
 from app.gitana.parser import parse_numstat, run_git_log
 from app.workers.celery_app import celery_app
 
@@ -47,7 +47,7 @@ def analyze_repo(job_id: int, url: str) -> dict:
         _update(job_id, progress=55)
         output = run_git_log(repo)
         analysis = parse_numstat(output)
-        metrics = summarize(analysis)
+        metrics = build_report(analysis, repo)
         _update(job_id, progress=85)
 
         db = SessionLocal()

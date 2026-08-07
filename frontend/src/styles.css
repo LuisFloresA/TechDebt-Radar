@@ -217,6 +217,128 @@ body {
   margin: 0 0 10px;
 }
 
+/* Score gauge */
+.widget--gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.score-gauge {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 8px 0 12px;
+}
+
+.score-gauge__inner {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.score-gauge__value {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-gauge__label {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Debt table */
+.debt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.debt-table th,
+.debt-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid #334155;
+}
+
+.debt-table th {
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.debt-table tr:last-child td {
+  border-bottom: none;
+}
+
+.debt-table td:not(:first-child) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Recommendations */
+.recs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recs__item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-left-width: 4px;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.recs__item--high {
+  border-left-color: #ef4444;
+}
+
+.recs__item--medium {
+  border-left-color: #f59e0b;
+}
+
+.recs__item--low {
+  border-left-color: #22c55e;
+}
+
+.recs__badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.recs__title {
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.recs__detail {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
 @media (max-width: 560px) {
   .grid {
     grid-template-columns: 1fr;

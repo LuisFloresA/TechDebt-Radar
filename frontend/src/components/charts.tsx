@@ -1,7 +1,51 @@
-import { Bar, Line } from 'react-chartjs-2'
-import type { BusFactorEntry, ChurnEntry, Hotspot } from '../types'
+import { Bar, Line, Radar } from 'react-chartjs-2'
+import type { BusFactorEntry, ChurnEntry, Hotspot, ScoreComponents } from '../types'
 
 const TOP = 10
+
+const AXIS_LABELS: Record<keyof ScoreComponents, string> = {
+  bus_factor: 'Bus factor',
+  hotspots: 'Hotspots',
+  churn: 'Churn',
+  tech_debt: 'Deuda técnica',
+  cadence: 'Cadencia',
+}
+
+export function RadarChart({ components }: { components: ScoreComponents }) {
+  return (
+    <Radar
+      data={{
+        labels: Object.keys(AXIS_LABELS).map(
+          (k) => AXIS_LABELS[k as keyof ScoreComponents],
+        ),
+        datasets: [
+          {
+            label: 'Salud por componente (0-100)',
+            data: Object.values(components),
+            borderColor: '#22d3ee',
+            backgroundColor: 'rgba(34, 211, 238, 0.2)',
+            pointBackgroundColor: '#22d3ee',
+          },
+        ],
+      }}
+      options={{
+        scales: {
+          r: {
+            min: 0,
+            max: 100,
+            ticks: { stepSize: 25 },
+            grid: { color: 'rgba(148, 163, 184, 0.2)' },
+            angleLines: { color: 'rgba(148, 163, 184, 0.2)' },
+          },
+        },
+        plugins: { legend: { display: false } },
+        responsive: true,
+        maintainAspectRatio: false,
+      }}
+      height={280}
+    />
+  )
+}
 
 function shortPath(path: string): string {
   const parts = path.split('/')

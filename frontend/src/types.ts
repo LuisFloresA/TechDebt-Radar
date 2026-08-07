@@ -26,12 +26,51 @@ export interface Summary {
   files_analyzed: number
 }
 
+export interface StaticEntry {
+  path: string
+  lines: number
+  todos: number
+  fixmes: number
+  complexity: number
+}
+
+export interface StaticMetrics {
+  files: StaticEntry[]
+  total_todos: number
+  total_fixmes: number
+  total_lines: number
+  large_files: number
+  duplicate_units: number
+}
+
+export interface ScoreComponents {
+  bus_factor: number
+  hotspots: number
+  churn: number
+  tech_debt: number
+  cadence: number
+}
+
+export interface Score {
+  score: number
+  components: ScoreComponents
+}
+
+export interface Recommendation {
+  severity: 'high' | 'medium' | 'low'
+  title: string
+  detail: string
+}
+
 export interface ReportMetrics {
   summary: Summary
   hotspots: Hotspot[]
   churn: ChurnEntry[]
   bus_factor: BusFactorEntry[]
   cadence: Record<string, number>
+  static: StaticMetrics
+  score: Score
+  recommendations: Recommendation[]
 }
 
 export interface Job {
