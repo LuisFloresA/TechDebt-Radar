@@ -69,11 +69,11 @@ WEIGHTS = {
 def compute_score(analysis: RepoAnalysis, static: StaticScan) -> dict:
     """Devuelve score global y desglose (ejes de radar), todos 0-100."""
     components = {
-        "bus_factor": round(_bus_factor_component(analysis), 1),
+        "bus_factor": round(_bus_factor_component(analysis)),
         "hotspots": round(_hotspots_component(analysis), 1),
         "churn": round(_churn_component(analysis), 1),
         "tech_debt": round(_tech_debt_component(static), 1),
-        "cadence": round(_cadence_component(analysis), 1),
+        "cadence": round(_cadence_component(analysis)),
     }
     total = sum(WEIGHTS[k] * components[k] for k in WEIGHTS)
     return {"score": round(total), "components": components}
