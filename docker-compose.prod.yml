@@ -1,0 +1,17 @@
+name: techdebt-radar-prod
+
+# Override de producción: expone API y frontend SOLO a 127.0.0.1.
+# La API queda interna; solo nginx del frontend la alcanza. Para exponer
+# el frontend a internet se usa un reverse proxy (p.ej. Caddy) frente a :8088.
+#
+# Uso:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+
+services:
+  api:
+    ports:
+      - "127.0.0.1:8001:8000"
+
+  frontend:
+    ports:
+      - "127.0.0.1:8088:80"
