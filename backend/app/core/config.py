@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     redis_url: str = "redis://localhost:6379/0"
     repo_storage_dir: str = "./data/repos"
     max_repo_size_mb: int = 200
-    clone_depth: int = 1
+    clone_depth: int = 50
     clone_timeout_seconds: int = 120
 
     model_config = SettingsConfigDict(
