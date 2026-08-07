@@ -70,6 +70,37 @@ sudo systemctl restart caddy
 ```
 Caddy emite y renueva TLS de Let's Encrypt automaticamente.
 
+## (Opcional) HTTPS sin dominio — Cloudflare Tunnel (Quick Tunnel)
+
+Un túnel de Cloudflare da una URL **HTTPS** pública sin necesitar dominio ni
+abrir puertos en el Security List.
+
+Instalar `cloudflared` (para ARM/aarch64, como el shape de Oracle):
+```bash
+sudo curl -fsSL -o /usr/local/bin/cloudflared \
+  https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64
+sudo chmod +x /usr/local/bin/cloudflared
+```
+
+Lanzar un túnel rápido hacia el frontend local (`127.0.0.1:8088`):
+```bash
+nohup cloudflared tunnel --url http://127.0.0.1:8088 --no-autoupdate \
+  > /home/ubuntu/cloudflared.log 2>&1 &
+sleep 12; grep trycloudflare /home/ubuntu/cloudflared.log
+```
+Abre la URL `https://<aleatorio>.trycloudflare.com` que aparezca en el log.
+
+> **Limitaciones**: sin cuenta/dominio la URL es **aleatoria y efímera** (cambia
+> cada vez que lanzas el túnel y muere al reiniciar la VM). Es perfecta para
+> una demo, no para producción. Para una URL estable se necesita un **named
+> tunnel** con un dominio en Cloudflare (plan Free):
+> `https://developers.cloudflare.com/cloudflare-one/connections/connect-apps`
+
+Para detener el túnel: `pkill -f cloudflared`.
+> Como el túnel ya da HTTPS, podrías volver a atar el frontend a `127.0.0.1`
+> en `docker-compose.prod.yml` (más seguro: solo Cloudflare lo alcanza), pero
+> deja así `0.0.0.0:8088` si también quieres acceso por IP directa.
+
 ## Notas de carga (free tier)
 
 1 GB de RAM alcanza justos para API + worker + Redis + procesos `git`. Si el
