@@ -217,6 +217,12 @@ body {
   margin: 0 0 10px;
 }
 
+/* Chart containers: altura fija evita el bucle de resize de Chart.js */
+.chart-box {
+  position: relative;
+  height: 320px;
+}
+
 /* Score gauge */
 .widget--gauge {
   display: flex;
