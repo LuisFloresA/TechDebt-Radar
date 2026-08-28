@@ -27,6 +27,11 @@ dist-ssr/
 id_rsa*
 *DISCORD*
 
+# Internal docs / planning
+docs/COMPLETA.md
+docs/GUIA-PASO-A-PASO.md
+docs/planificacion/
+
 
 # Data (SQLite) — keep dir, ignore contents
 .data/

@@ -4,7 +4,7 @@
 
 Analítica de salud técnica de repositorios. Introduces una URL de GitHub y la plataforma analiza el historial de Git y el árbol de código para producir un dashboard con métricas accionables: deuda técnica, hotspots, bus factor, churn y un score de salud global.
 
-**Estado:** F3 — contenido y hardening (docs, rate limiting, CSP, cobertura). Ver README de planificación en `docs/planificacion/`.
+**Estado:** F3 — contenido y hardening (docs, rate limiting, CSP, cobertura).
 
 ## Documentación
 
@@ -117,12 +117,13 @@ techdebt-radar/
 ├── frontend/           # React 19 + Vite
 ├── docker-compose.yml
 ├── .github/workflows/  # CI
-└── docs/               # planificación
+└── docs/               # documentación técnica
 ```
 
 ## Roadmap
 
-F0 esqueleto → F1 Git Analytics MVP → F2 deuda + score (✓) → F3 contenido y hardening → F4 deploy (independiente) → F5 (opt) integración. Ver `docs/planificacion/`.
+F0 esqueleto → F1 Git Analytics MVP → F2 deuda + score (✓) → F3 contenido y hardening → F4 deploy (independiente) → F5 (opt) integración.
+
 
 ## Licencia
 
