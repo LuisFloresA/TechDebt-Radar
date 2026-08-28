@@ -77,7 +77,8 @@ curl http://localhost:8001/api/jobs/1
 
 ## Despliegue
 
-Publicación en un VPS gratuito con Docker (Oracle Cloud Always Free): [`docs/deploy.md`](docs/deploy.md).
+Publicación en un VPS con Docker: [`docs/deploy.md`](docs/deploy.md).
+
 
 ## Desarrollo local
 

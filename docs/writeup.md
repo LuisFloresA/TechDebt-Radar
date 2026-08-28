@@ -53,7 +53,7 @@ Postura de seguridad completa en `docs/seguridad.md`: validación de URLs (anti-
 
 ### Qué seguiría (F4-F5)
 
-- **F4 · Deploy** (fase independiente): publicación en Render/OCI con badge de CI.
+- **F4 · Deploy** (fase independiente): publicación en VPS / Cloud con badge de CI.
 - **F5 · Integración ampliada**: soporte de GitLab/Bitbucket, tendencia del score *over-time* al re-analizar, autenticación y proyectos.
 
 ### Aprendizajes

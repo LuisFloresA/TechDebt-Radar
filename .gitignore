@@ -21,6 +21,12 @@ dist-ssr/
 # Env / secrets
 .env
 .env.local
+*.pem
+*.key
+*.pub
+id_rsa*
+*DISCORD*
+
 
 # Data (SQLite) — keep dir, ignore contents
 .data/
